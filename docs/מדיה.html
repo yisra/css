@@ -1,0 +1,156 @@
+<a href="מפתח.html" class="nav-button">🏠</a>
+<!DOCTYPE html>
+<html dir="rtl" lang="he">
+<head>
+    <meta charset="UTF-8">
+    <title>מדריך CSS - מדיה</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        h1, h2, h3 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        .toc, .section {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: right;
+        }
+
+        th {
+            background-color: #3498db;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .example {
+            background-color: #f8f9fa;
+            padding: 10px;
+            border-right: 3px solid #3498db;
+            margin: 10px 0;
+            direction: ltr;
+        }
+    </style>
+</head>
+<body>
+    <h1>מדריך CSS - מדיה (Media Queries)</h1>
+
+    <div class="toc">
+        <h2>תוכן עניינים</h2>
+        <ul>
+            <li><a href="#media-queries">מדיה (Media Queries)</a>
+                <ul>
+                    <li><a href="#syntax">תחביר</a></li>
+                    <li><a href="#examples">דוגמאות שימושיות</a></li>
+                    <li><a href="#features">מאפייני מדיה</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div id="media-queries" class="section">
+        <h2>מדיה (Media Queries)</h2>
+        <p>מדיה ב-CSS מאפשרת להתאים סגנונות בהתאם למאפייני מכשירים כמו גודל מסך, רזולוציה ועוד.</p>
+    </div>
+
+    <div id="syntax" class="sub-section">
+        <h3>תחביר (Syntax)</h3>
+        <p>תחביר בסיסי של Media Query:</p>
+        <div class="example">
+            @media (max-width: 600px) {
+                body {
+                    background-color: lightblue;
+                }
+            }
+        </div>
+        <p>בדוגמה זו, הרקע ישתנה לכחול בהיר במסכים שגודלם קטן מ-600px.</p>
+    </div>
+
+    <div id="examples" class="sub-section">
+        <h3>דוגמאות שימושיות</h3>
+        <table>
+            <tr>
+                <th>דוגמה</th>
+                <th>הסבר</th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="example">
+                        @media (min-width: 768px) {
+                            body {
+                                font-size: 18px;
+                            }
+                        }
+                    </div>
+                </td>
+                <td>מתאים את גודל הפונט למסכים ברוחב של 768px ומעלה.</td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="example">
+                        @media (orientation: landscape) {
+                            body {
+                                background-color: lightgreen;
+                            }
+                        }
+                    </div>
+                </td>
+                <td>משנה את הרקע כאשר המסך במצב לרוחב.</td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="features" class="sub-section">
+        <h3>מאפייני מדיה</h3>
+        <p>להלן מאפיינים נפוצים לשימוש ב-Media Queries:</p>
+        <table>
+            <tr>
+                <th>מאפיין</th>
+                <th>תיאור</th>
+            </tr>
+            <tr>
+                <td>max-width</td>
+                <td>רוחב מקסימלי של המסך</td>
+            </tr>
+            <tr>
+                <td>min-width</td>
+                <td>רוחב מינימלי של המסך</td>
+            </tr>
+            <tr>
+                <td>orientation</td>
+                <td>מצב המסך (אנכי/אופקי)</td>
+            </tr>
+            <tr>
+                <td>resolution</td>
+                <td>רזולוציית המסך</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
+<a href="#" class="nav-button">⬆</a>

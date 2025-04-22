@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="he">
+<head>
+    <meta charset="UTF-8">
+    <title>מדריך CSS - אנימציות ומעברים</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        h1, h2, h3 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        .toc, .section {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(190, 109, 109, 0.226);
+            margin-bottom: 30px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: right;
+        }
+
+        th {
+            background-color: #3498db;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+                /* עיצוב כפתור הבית */
+                .home-button {
+            position: fixed; /* הכפתור נשאר במקום קבוע */
+            top: 20px; /* מיקום מלמעלה */
+            right: 20px; /* מיקום מימין */
+            background-color: #3498db;
+            color: white;
+            font-size: 18px;
+            padding: 10px 15px;
+            border-radius: 50%; /* הופך את הכפתור לעגול */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* אפקט צל */
+            text-decoration: none; /* מסיר קו תחתון */
+            transition: transform 0.3s; /* מעבר חלק */
+        }
+
+        .home-button:hover {
+            transform: scale(1.2); /* הגדלה בעת ריחוף */
+            background-color: #2ecc71; /* שינוי צבע */
+        }
+
+        /* עיצוב כפתור למעלה */
+        .to-top-button {
+            position: fixed; /* הכפתור צף על הדף */
+            bottom: 20px; /* מיקום מלמטה */
+            right: 20px; /* מיקום מימין */
+            background-color: #3498db;
+            color: white;
+            font-size: 18px;
+            padding: 10px 15px;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+
+        .to-top-button:hover {
+            transform: scale(1.2);
+            background-color: #2ecc71;
+        }
+
+        /* עיצוב תוכן עם עוגנים */
+        .sub-section {
+            margin-bottom: 20px;
+
+        .example {
+            background-color: #f8f9fa;
+            padding: 10px;
+            border-right: 3px solid #3498db;
+            margin: 10px 0;
+            direction: ltr;
+        }
+    </style>
+</head>
+<body>
+    <!-- כפתור הבית -->
+    <a href="מפתח.html" class="nav-button">🏠</a>
+    <!-- מחזיר לעמוד הראשי של המפתח -->
+
+    <!-- כותרת הדף -->
+    <h1>מדריך CSS - אנימציות ומעברים</h1>
+
+    <div class="toc">
+        <h2>תוכן עניינים</h2>
+        <ul>
+            <li><a href="#transitions">מעברים (Transitions)</a>
+                <ul>
+                    <li><a href="#transition-property">מאפיין המעבר</a></li>
+                    <li><a href="#transition-duration">משך המעבר</a></li>
+                    <li><a href="#transition-timing-function">פונקציית תזמון</a></li>
+                    <li><a href="#transition-delay">השהיית מעבר</a></li>
+                </ul>
+            </li>
+            <li><a href="#animations">אנימציות</a>
+                <ul>
+                    <li><a href="#keyframes">הגדרת Keyframes</a></li>
+                    <li><a href="#animation-properties">מאפייני אנימציה</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+        <!-- תוכן הדף -->
+    <div id="transitions" class="section">
+        <h2>מעברים (Transitions)</h2>
+
+        <div id="transition-property" class="sub-section">
+            <h3>מאפיין המעבר (Transition Property)</h3>
+            <table>
+                <tr>
+                    <th>מאפיין</th>
+                    <th>דוגמה</th>
+                    <th>הסבר</th>
+                </tr>
+                <tr>
+                    <td>transition-property</td>
+                    <td>
+                        <div class="example">transition-property: background-color;</div>
+                    </td>
+                    <td>קובע אילו מאפיינים ישתנו במעבר</td>
+                </tr>
+            </table>
+        </div>
+
+        <div id="transition-duration" class="sub-section">
+            <h3>משך המעבר (Transition Duration)</h3>
+            <table>
+                <tr>
+                    <th>מאפיין</th>
+                    <th>דוגמה</th>
+                    <th>הסבר</th>
+                </tr>
+                <tr>
+                    <td>transition-duration</td>
+                    <td>
+                        <div class="example">transition-duration: 0.5s;</div>
+                    </td>
+                    <td>משך הזמן של המעבר</td>
+                </tr>
+            </table>
+        </div>
+
+        <div id="transition-timing-function" class="sub-section">
+            <h3>פונקציית תזמון (Timing Function)</h3>
+            <table>
+                <tr>
+                    <th>מאפיין</th>
+                    <th>דוגמה</th>
+                    <th>הסבר</th>
+                </tr>
+                <tr>
+                    <td>transition-timing-function</td>
+                    <td>
+                        <div class="example">transition-timing-function: ease-in-out;</div>
+                    </td>
+                    <td>קובע את הקצב של המעבר</td>
+                </tr>
+            </table>
+        </div>
+
+        <div id="transition-delay" class="sub-section">
+            <h3>השהיית מעבר (Transition Delay)</h3>
+            <table>
+                <tr>
+                    <th>מאפיין</th>
+                    <th>דוגמה</th>
+                    <th>הסבר</th>
+                </tr>
+                <tr>
+                    <td>transition-delay</td>
+                    <td>
+                        <div class="example">transition-delay: 0.3s;</div>
+                    </td>
+                    <td>מגדיר השהיה לפני תחילת המעבר</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div id="animations" class="section">
+        <h2>אנימציות (Animations)</h2>
+
+        <div id="keyframes" class="sub-section">
+            <h3>הגדרת Keyframes</h3>
+            <p>Keyframes מאפשרים לקבוע שלבים שונים באנימציה:</p>
+            <div class="example">
+                @keyframes example {
+                    0% { background-color: red; }
+                    100% { background-color: yellow; }
+                }
+            </div>
+        </div>
+
+        <div id="animation-properties" class="sub-section">
+            <h3>מאפייני אנימציה</h3>
+            <table>
+                <tr>
+                    <th>מאפיין</th>
+                    <th>דוגמה</th>
+                    <th>הסבר</th>
+                </tr>
+                <tr>
+                    <td>animation-name</td>
+                    <td>
+                        <div class="example">animation-name: example;</div>
+                    </td>
+                    <td>שם האנימציה כפי שהוגדר ב-Keyframes</td>
+                </tr>
+                <tr>
+                    <td>animation-duration</td>
+                    <td>
+                        <div class="example">animation-duration: 2s;</div>
+                    </td>
+                    <td>משך הזמן של האנימציה</td>
+                </tr>
+                <tr>
+                    <td>animation-timing-function</td>
+                    <td>
+                        <div class="example">animation-timing-function: ease;</div>
+                    </td>
+                    <td>פונקציית תזמון של האנימציה</td>
+                </tr>
+                <tr>
+                    <td>animation-delay</td>
+                    <td>
+                        <div class="example">animation-delay: 1s;</div>
+                    </td>
+                    <td>השהיה לפני תחילת האנימציה</td>
+                </tr>
+                <tr>
+                    <td>animation-iteration-count</td>
+                    <td>
+                        <div class="example">animation-iteration-count: infinite;</div>
+                    </td>
+                    <td>מספר הפעמים שהאנימציה תבוצע</td>
+                </tr>
+                <tr>
+                    <td>animation-direction</td>
+                    <td>
+                        <div class="example">animation-direction: alternate;</div>
+                    </td>
+                    <td>כיוון האנימציה (קדימה/אחורה)</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <a href="#" class="nav-button">⬆</a>
+</body>
+</html>
+
+

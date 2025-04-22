@@ -1,0 +1,175 @@
+<a href="מפתח.html" class="nav-button">🏠</a>
+<!DOCTYPE html>
+<html dir="rtl" lang="he">
+<head>
+    <meta charset="UTF-8">
+    <title>מדריך CSS - מודל הקופסה</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        h1, h2, h3 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        .toc, .section {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: right;
+        }
+
+        th {
+            background-color: #3498db;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .example {
+            background-color: #f8f9fa;
+            padding: 10px;
+            border-right: 3px solid #3498db;
+            margin: 10px 0;
+            direction: ltr;
+        }
+    </style>
+</head>
+<body>
+    <h1>מדריך CSS - מודל הקופסה</h1>
+
+    <div class="toc">
+        <h2>תוכן עניינים</h2>
+        <ul>
+            <li><a href="#box-model">מודל הקופסה (Box Model)</a>
+                <ul>
+                    <li><a href="#content">תוכן (Content)</a></li>
+                    <li><a href="#padding">ריווח פנימי (Padding)</a></li>
+                    <li><a href="#border">גבול (Border)</a></li>
+                    <li><a href="#margin">ריווח חיצוני (Margin)</a></li>
+                    <li><a href="#box-sizing">קביעת מודל (Box Sizing)</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div id="box-model" class="section">
+        <h2>מודל הקופסה (Box Model)</h2>
+        <p>מודל הקופסה של CSS מתאר כיצד אלמנט תופס מקום בעמוד. המודל כולל את:</p>
+        <ul>
+            <li><strong>תוכן:</strong> השטח בו מופיע התוכן של האלמנט.</li>
+            <li><strong>ריווח פנימי (Padding):</strong> השטח בין התוכן לגבול.</li>
+            <li><strong>גבול (Border):</strong> המסגרת המקיפה את הריווח הפנימי.</li>
+            <li><strong>ריווח חיצוני (Margin):</strong> השטח החיצוני המקיף את הגבול.</li>
+        </ul>
+    </div>
+
+    <div id="content" class="sub-section">
+        <h3>תוכן (Content)</h3>
+        <p>תוכן האלמנט הוא השטח שבו הטקסט, התמונות, או שאר הפריטים מוצגים.</p>
+    </div>
+
+    <div id="padding" class="sub-section">
+        <h3>ריווח פנימי (Padding)</h3>
+        <table>
+            <tr>
+                <th>מאפיין</th>
+                <th>דוגמה</th>
+                <th>הסבר</th>
+            </tr>
+            <tr>
+                <td>padding</td>
+                <td>
+                    <div class="example">padding: 10px;</div>
+                </td>
+                <td>קובע ריווח פנימי מכל הצדדים</td>
+            </tr>
+            <tr>
+                <td>padding-top</td>
+                <td>
+                    <div class="example">padding-top: 10px;</div>
+                </td>
+                <td>ריווח פנימי מעל</td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="border" class="sub-section">
+        <h3>גבול (Border)</h3>
+        <table>
+            <tr>
+                <th>מאפיין</th>
+                <th>דוגמה</th>
+                <th>הסבר</th>
+            </tr>
+            <tr>
+                <td>border</td>
+                <td>
+                    <div class="example">border: 1px solid black;</div>
+                </td>
+                <td>קובע גבול כולל עובי, סגנון וצבע</td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="margin" class="sub-section">
+        <h3>ריווח חיצוני (Margin)</h3>
+        <table>
+            <tr>
+                <th>מאפיין</th>
+                <th>דוגמה</th>
+                <th>הסבר</th>
+            </tr>
+            <tr>
+                <td>margin</td>
+                <td>
+                    <div class="example">margin: 20px;</div>
+                </td>
+                <td>קובע ריווח חיצוני מכל הצדדים</td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="box-sizing" class="sub-section">
+        <h3>קביעת מודל (Box Sizing)</h3>
+        <table>
+            <tr>
+                <th>מאפיין</th>
+                <th>דוגמה</th>
+                <th>הסבר</th>
+            </tr>
+            <tr>
+                <td>box-sizing</td>
+                <td>
+                    <div class="example">box-sizing: border-box;</div>
+                </td>
+                <td>קובע אם מידות האלמנט כוללות גבול וריווח פנימי</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
+<a href="#" class="nav-button">⬆</a>
+

@@ -1,0 +1,174 @@
+<a href="מפתח.html" class="nav-button">🏠</a>
+<!DOCTYPE html>
+<html dir="rtl" lang="he">
+<head>
+    <meta charset="UTF-8">
+    <title>מדריך CSS - טרנספורמציות</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        h1, h2, h3 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        .toc, .section {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: right;
+        }
+
+        th {
+            background-color: #3498db;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .example {
+            background-color: #f8f9fa;
+            padding: 10px;
+            border-right: 3px solid #3498db;
+            margin: 10px 0;
+            direction: ltr;
+        }
+    </style>
+</head>
+<body>
+    <h1>מדריך CSS - טרנספורמציות</h1>
+
+    <div class="toc">
+        <h2>תוכן עניינים</h2>
+        <ul>
+            <li><a href="#transform">טרנספורמציות (Transformations)</a>
+                <ul>
+                    <li><a href="#translate">הזזה (Translate)</a></li>
+                    <li><a href="#rotate">סיבוב (Rotate)</a></li>
+                    <li><a href="#scale">שינוי גודל (Scale)</a></li>
+                    <li><a href="#skew">הטיה (Skew)</a></li>
+                    <li><a href="#matrix">מטריצה (Matrix)</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div id="transform" class="section">
+        <h2>טרנספורמציות (Transformations)</h2>
+
+        <div id="translate" class="sub-section">
+            <h3>הזזה (Translate)</h3>
+            <table>
+                <tr>
+                    <th>מאפיין</th>
+                    <th>דוגמה</th>
+                    <th>הסבר</th>
+                </tr>
+                <tr>
+                    <td>translate</td>
+                    <td>
+                        <div class="example">transform: translate(50px, 100px);</div>
+                    </td>
+                    <td>מזיז את האלמנט על ציר ה-X וה-Y</td>
+                </tr>
+            </table>
+        </div>
+
+        <div id="rotate" class="sub-section">
+            <h3>סיבוב (Rotate)</h3>
+            <table>
+                <tr>
+                    <th>מאפיין</th>
+                    <th>דוגמה</th>
+                    <th>הסבר</th>
+                </tr>
+                <tr>
+                    <td>rotate</td>
+                    <td>
+                        <div class="example">transform: rotate(45deg);</div>
+                    </td>
+                    <td>מסובב את האלמנט לפי זווית</td>
+                </tr>
+            </table>
+        </div>
+
+        <div id="scale" class="sub-section">
+            <h3>שינוי גודל (Scale)</h3>
+            <table>
+                <tr>
+                    <th>מאפיין</th>
+                    <th>דוגמה</th>
+                    <th>הסבר</th>
+                </tr>
+                <tr>
+                    <td>scale</td>
+                    <td>
+                        <div class="example">transform: scale(1.5);</div>
+                    </td>
+                    <td>משנה את גודל האלמנט (יחסית)</td>
+                </tr>
+            </table>
+        </div>
+
+        <div id="skew" class="sub-section">
+            <h3>הטיה (Skew)</h3>
+            <table>
+                <tr>
+                    <th>מאפיין</th>
+                    <th>דוגמה</th>
+                    <th>הסבר</th>
+                </tr>
+                <tr>
+                    <td>skew</td>
+                    <td>
+                        <div class="example">transform: skew(30deg, 20deg);</div>
+                    </td>
+                    <td>מטה את האלמנט על צירי ה-X וה-Y</td>
+                </tr>
+            </table>
+        </div>
+
+        <div id="matrix" class="sub-section">
+            <h3>מטריצה (Matrix)</h3>
+            <table>
+                <tr>
+                    <th>מאפיין</th>
+                    <th>דוגמה</th>
+                    <th>הסבר</th>
+                </tr>
+                <tr>
+                    <td>matrix</td>
+                    <td>
+                        <div class="example">transform: matrix(1, 0, 0, 1, 50, 100);</div>
+                    </td>
+                    <td>משלב הזזה, סיבוב, שינוי גודל והטיה במאפיין אחד</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
+<a href="#" class="nav-button">⬆</a>
+

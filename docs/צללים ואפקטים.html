@@ -1,0 +1,131 @@
+<a href="מפתח.html" class="nav-button">🏠</a>
+<!DOCTYPE html>
+<html dir="rtl" lang="he">
+<head>
+    <meta charset="UTF-8">
+    <title>מדריך CSS - צללים ואפקטים</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        h1, h2, h3 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        .toc, .section {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: right;
+        }
+
+        th {
+            background-color: #3498db;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .example {
+            background-color: #f8f9fa;
+            padding: 10px;
+            border-right: 3px solid #3498db;
+            margin: 10px 0;
+            direction: ltr;
+        }
+    </style>
+</head>
+<body>
+    <h1>מדריך CSS - צללים ואפקטים</h1>
+
+    <div class="toc">
+        <h2>תוכן עניינים</h2>
+        <ul>
+            <li><a href="#shadows">צללים</a>
+                <ul>
+                    <li><a href="#box-shadow">צל לקופסה (Box Shadow)</a></li>
+                    <li><a href="#text-shadow">צל לטקסט (Text Shadow)</a></li>
+                </ul>
+            </li>
+            <li><a href="#effects">אפקטים</a>
+                <ul>
+                    <li><a href="#filter">פילטרים (Filters)</a></li>
+                    <li><a href="#backdrop-filter">פילטרי רקע (Backdrop Filters)</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div id="shadows" class="section">
+        <h2>צללים (Shadows)</h2>
+
+        <div id="box-shadow" class="sub-section">
+            <h3>צל לקופסה (Box Shadow)</h3>
+            <p>מאפיין <code>box-shadow</code> מאפשר להוסיף צל לקופסה:</p>
+            <div class="example">box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.5);</div>
+            <p>במאפיין זה ניתן להגדיר:</p>
+            <ul>
+                <li><strong>Offset X:</strong> מיקום הצל בציר ה-X.</li>
+                <li><strong>Offset Y:</strong> מיקום הצל בציר ה-Y.</li>
+                <li><strong>Blur Radius:</strong> רמת הטשטוש.</li>
+                <li><strong>Color:</strong> צבע הצל.</li>
+            </ul>
+        </div>
+
+        <div id="text-shadow" class="sub-section">
+            <h3>צל לטקסט (Text Shadow)</h3>
+            <p>מאפיין <code>text-shadow</code> מוסיף צל לטקסט:</p>
+            <div class="example">text-shadow: 2px 2px 2px gray;</div>
+            <p>מבנה המאפיין דומה לזה של <code>box-shadow</code>, אך חל על טקסט.</p>
+        </div>
+    </div>
+
+    <div id="effects" class="section">
+        <h2>אפקטים (Effects)</h2>
+
+        <div id="filter" class="sub-section">
+            <h3>פילטרים (Filters)</h3>
+            <p>מאפיין <code>filter</code> מאפשר להוסיף אפקטים ויזואליים על אלמנטים:</p>
+            <div class="example">filter: blur(5px);</div>
+            <p>אפקטים נפוצים:</p>
+            <ul>
+                <li><strong>blur:</strong> טשטוש.</li>
+                <li><strong>brightness:</strong> בהירות.</li>
+                <li><strong>contrast:</strong> ניגודיות.</li>
+                <li><strong>grayscale:</strong> גווני אפור.</li>
+            </ul>
+        </div>
+
+        <div id="backdrop-filter" class="sub-section">
+            <h3>פילטרי רקע (Backdrop Filters)</h3>
+            <p>מאפיין <code>backdrop-filter</code> חל על אלמנטים מאחורי שכבת האלמנט הנוכחי:</p>
+            <div class="example">backdrop-filter: blur(10px);</div>
+            <p>משמש לעיצוב מתקדם בשילוב עם שקיפות.</p>
+        </div>
+    </div>
+</body>
+</html>
+<a href="#" class="nav-button">⬆</a>
+
