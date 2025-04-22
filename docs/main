@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="he">
+<head>
+    <meta charset="UTF-8">
+    <title>מדריך CSS - מפתח הקבצים</title>
+    <style>
+        /* עיצוב בסיסי */
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #3498db, #9b59b6);
+            color: white;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        /* עיצוב קישורים */
+        .link-container, .sub-link-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .link, .sub-link {
+            background-color: #ffffff;
+            color: #2c3e50;
+            font-size: 1.2em;
+            font-weight: bold;
+            text-decoration: none;
+            padding: 15px 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .link:hover, .sub-link:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            background-color: #2ecc71;
+            color: white;
+        }
+
+        /* כותרות לנושאים ותתי נושאים */
+        h2 {
+            font-size: 1.8em;
+            margin-top: 50px;
+            text-decoration: underline;
+        }
+
+        /* אנימציות לטעינת הדף */
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* עיצוב כפתורי הניווט */
+        .nav-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #3498db;
+            color: white;
+            font-size: 18px;
+            padding: 10px 15px;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+
+        .nav-button:hover {
+            transform: scale(1.2);
+            background-color: #2ecc71;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="fade-in">מדריך CSS - מפתח הקבצים</h1>
+
+    <!-- נושאים ראשיים -->
+    <div class="link-container">
+        <a href="טיפוגרפיה וגופנים.html" class="link fade-in">טיפוגרפיה וגופנים</a>
+        <a href="גבולות ומסגרות.html" class="link fade-in">גבולות ומסגרות</a>
+        <a href="מיקום ותצוגה.html" class="link fade-in">מיקום ותצוגה</a>
+        <a href="גריד ופלקסבוקס.html" class="link fade-in">גריד ופלקסבוקס</a>
+        <a href="אנימציות ומעברים.html" class="link fade-in">אנימציות ומעברים</a>
+        <a href="טרנספורמציה.html" class="link fade-in">טרנספורמציה</a>
+        <a href="מודל הקופסה.html" class="link fade-in">מודל הקופסה</a>
+        <a href="צבעים ושקיפות.html" class="link fade-in">צבעים ושקיפות</a>
+        <a href="מדיה.html" class="link fade-in">מדיה (Media Queries)</a>
+        <a href="צללים ואפקטים.html" class="link fade-in">צללים ואפקטים</a>
+    </div>
+
+    <!-- תתי נושאים -->
+    <h2>תתי נושאים</h2>
+    <!-- אנימציות -->
+    <h3>אנימציות</h3>
+        <div class="sub-link-container">
+            <a href="" class="sub-link fade-in"></a>
+            <a href="" class="sub-link fade-in"></a>
+        </div>
+
+        <!-- אפקטים -->
+    <div>
+        <h3>אפקטים</h3>
+        <div class="sub-link-container">
+            <a href="" class="sub-link fade-in"></a>
+            <a href="" class="sub-link fade-in"></a>
+        </div>
+    </div>
+
+    <!-- גבולות ומסגרות -->
+    <div>
+        <h3>גבולות ומסגרות</h3>
+        <div class="sub-link-container">
+            <a href="גבולות ומסגרות.html#border-style" class="sub-link fade-in">סגנון מסגרת</a>
+            <a href="גבולות ומסגרות.html#border-width" class="sub-link fade-in">עובי מסגרת</a>
+            <a href="גבולות ומסגרות.html#border-color" class="sub-link fade-in">צבע מסגרת</a>
+            <a href="גבולות ומסגרות.html#border-radius" class="sub-link fade-in">פינות מעוגלות</a>
+            <a href="גבולות ומסגרות.html#outline" class="sub-link fade-in">קו חיצוני</a>
+        </div>
+    </div>
+
+    <!-- גריד -->
+    <div>
+        <h3>גריד</h3>
+        <div class="sub-link-container">
+            <a href="גריד.html#grid-template" class="sub-link fade-in">תבנית גריד</a>
+            <a href="גריד.html#flexbox-layout" class="sub-link fade-in">תבנית פלקסבוקס</a>
+            <a href="" class="sub-link fade-in"></a>
+            <a href="" class="sub-link fade-in"></a>
+        </div>
+    </div>
+
+    <!-- טיפוגרפיה וגופנים -->
+    <div>
+        <h3>טיפוגרפיה וגופנים</h3>
+        <div class="sub-link-container">
+            <a href="" class="sub-link fade-in"></a>
+            <a href="" class="sub-link fade-in"></a>
+            <a href="" class="sub-link fade-in"></a>
+            <a href="" class="sub-link fade-in"></a>
+            <a href="" class="sub-link fade-in"></a>
+            <a href="" class="sub-link fade-in"></a>
+            <a href="" class="sub-link fade-in"></a>
+            <a href="" class="sub-link fade-in"></a>
+            <a href="" class="sub-link fade-in"></a>
+            <a href="" class="sub-link fade-in"></a>    
+            <a href="" class="sub-link fade-in"></a>
+        </div>
+    </div>
+
+
+    <!-- טרנספורמציה -->
+    <div>
+        <h3>טרנספורמציה</h3>
+        <div class="sub-link-container">
+            <a href="" class="sub-link fade-in"></a>
+            <a href="" class="sub-link fade-in"></a>
+            <a href="" class="sub-link fade-in"></a>
+            <a href="" class="sub-link fade-in"></a>
+            <a href="" class="sub-link fade-in"></a>
+            <a href="" class="sub-link fade-in"></a>
+        </div>
+    </div>
+
+    <!-- מדיה -->
+    <div>
+        <h3>מדיה</h3>
+        <div class="sub-link-container">
+            <a href="" class="sub-link fade-in"></a>
+            <a href="" class="sub-link fade-in"></a>
+            <a href="" class="sub-link fade-in"></a>
+
+        </div>
+    </div>
+
+    <!-- מודל הקופסה -->
+    <div>
+        <h3>מודל הקופסה</h3>
+        <div class="sub-link-container">
+            <a href="" class="sub-link fade-in"></a>
+            <a href="" class="sub-link fade-in"></a>
+            <a href="" class="sub-link fade-in"></a>
+            <a href="" class="sub-link fade-in"></a>
+            <a href="" class="sub-link fade-in"></a>
+        </div>
+    </div>
+
+    <!-- מיקום ותצוגה -->
+    <div>
+        <h3>מיקום ותצוגה</h3>
+        <div class="sub-link-container">
+            <a href="" class="sub-link fade-in"></a>
+            <a href="" class="sub-link fade-in"></a>
+            <a href="" class="sub-link fade-in"></a>
+            <a href="" class="sub-link fade-in"></a>
+        </div>
+    </div>
+
+    <!-- מעברים -->
+    <div>
+        <h3>מעברים</h3>
+        <div class="sub-link-container">
+            <a href="" class="sub-link fade-in"></a>
+            <a href="" class="sub-link fade-in"></a>
+            <a href="" class="sub-link fade-in"></a>
+            <a href="" class="sub-link fade-in"></a>
+        </div>
+    </div>
+
+    <!-- צבעים  -->
+    <div>
+        <h3>צבעים</h3>
+        <div class="sub-link-container">
+            <a href="" class="sub-link fade-in"></a>
+            <a href="" class="sub-link fade-in"></a>
+            <a href="" class="sub-link fade-in"></a>
+            <a href="" class="sub-link fade-in"></a>
+        </div>
+    </div>
+
+    <!-- צללים  -->
+    <div>
+        <h3>צללים</h3>
+        <div class="sub-link-container">
+            <a href="" class="sub-link fade-in"></a>
+            <a href="" class="sub-link fade-in"></a>
+        </div>
+    </div>
+
+    <!-- שקיפות -->
+    <div>
+        <h3>שקיפות</h3>
+        <div class="sub-link-container">
+            <a href="" class="sub-link fade-in"></a>
+            <a href="" class="sub-link fade-in"></a>
+            <a href="" class="sub-link fade-in"></a>
+            <a href="" class="sub-link fade-in"></a>
+        </div>
+    </div>
+
+
+    <!-- הוספת כפתור למעלה -->
+    <a href="#" class="nav-button">⬆</a>
+</body>
+</html>
