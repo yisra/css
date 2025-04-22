@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="he">
+<head>
+    <meta charset="UTF-8">
+    <title>מדריך CSS - גבולות ומסגרות,</title>
+    <style>
+        /* Same base styles as previous document */
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        h1, h2, h3 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        
+        .toc, .section {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: right;
+        }
+        
+        th {
+            background-color: #3498db;
+            color: white;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        .example {
+            background-color: #f8f9fa;
+            padding: 10px;
+            border-right: 3px solid #3498db;
+            margin: 10px 0;
+            direction: ltr;
+        }
+    </style>
+</head>
+<body>
+    <h1>מדריך CSS - גבולות ומסגרות, מיקום ותצוגה</h1>
+    
+    <div class="toc">
+        <h2>תוכן עניינים</h2>
+        <ul>
+            <li><a href="#borders">גבולות ומסגרות</a>
+                <ul>
+                    <li><a href="#border-width">עובי גבול</a></li>
+                    <li><a href="#border-style">סגנון גבול</a></li>
+                    <li><a href="#border-color">צבע גבול</a></li>
+                    <li><a href="#border-radius">רדיוס פינות</a></li>
+                    <li><a href="#border-shorthand">קיצור דרך לגבול</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div id="borders" class="section">
+        <h2>גבולות ומסגרות (Borders)</h2>
+
+        <div id="border-width" class="sub-section">
+            <h3>עובי גבול (Border Width)</h3>
+            <table>
+                <tr>
+                    <th>ערך</th>
+                    <th>דוגמה</th>
+                    <th>הסבר</th>
+                </tr>
+                <tr>
+                    <td>thin</td>
+                    <td>
+                        <div class="example">border-width: thin;</div>
+                    </td>
+                    <td>עובי גבול דק</td>
+                </tr>
+                <tr>
+                    <td>medium</td>
+                    <td>
+                        <div class="example">border-width: medium;</div>
+                    </td>
+                    <td>עובי גבול בינוני</td>
+                </tr>
+                <tr>
+                    <td>thick</td>
+                    <td>
+                        <div class="example">border-width: thick;</div>
+                    </td>
+                    <td>עובי גבול עבה</td>
+                </tr>
+                <tr>
+                    <td>px</td>
+                    <td>
+                        <div class="example">border-width: 5px;</div>
+                    </td>
+                    <td>עובי גבול מותאם אישית</td>
+                </tr>
+            </table>
+        </div>
+
+        <div id="border-style" class="sub-section">
+            <h3>סגנון גבול (Border Style)</h3>
+            <table>
+                <tr>
+                    <th>ערך</th>
+                    <th>דוגמה</th>
+                    <th>הסבר</th>
+                </tr>
+                <tr>
+                    <td>solid</td>
+                    <td>
+                        <div class="example">border-style: solid;</div>
+                    </td>
+                    <td>קו מוצק</td>
+                </tr>
+                <tr>
+                    <td>dashed</td>
+                    <td>
+                        <div class="example">border-style: dashed;</div>
+                    </td>
+                    <td>קו מקווקו</td>
+                </tr>
+                <tr>
+                    <td>dotted</td>
+                    <td>
+                        <div class="example">border-style: dotted;</div>
+                    </td>
+                    <td>קו מנוקד</td>
+                </tr>
+                <tr>
+                    <td>double</td>
+                    <td>
+                        <div class="example">border-style: double;</div>
+                    </td>
+                    <td>קו כפול</td>
+                </tr>
+            </table>
+        </div>
+
+        <div id="border-color" class="sub-section">
+            <h3>צבע גבול (Border Color)</h3>
+            <table>
+                <tr>
+                    <th>ערך</th>
+                    <th>דוגמה</th>
+                    <th>הסבר</th>
+                </tr>
+                <tr>
+                    <td>שם צבע</td>
+                    <td>
+                        <div class="example">border-color: red;</div>
+                    </td>
+                    <td>שם צבע מוגדר מראש</td>
+                </tr>
+                <tr>
+                    <td>HEX</td>
+                    <td>
+                        <div class="example">border-color: #ff0000;</div>
+                    </td>
+                    <td>קוד צבע הקסדצימלי</td>
+                </tr>
+                <tr>
+                    <td>RGBA</td>
+                    <td>
+                        <div class="example">border-color: rgba(255, 0, 0, 0.5);</div>
+                    </td>
+                    <td>צבע עם שקיפות</td>
+                </tr>
+            </table>
+        </div>
+
+        <div id="border-radius" class="sub-section">
+            <h3>רדיוס פינות (Border Radius)</h3>
+            <table>
+                <tr>
+                    <th>ערך</th>
+                    <th>דוגמה</th>
+                    <th>הסבר</th>
+                </tr>
+                <tr>
+                    <td>px</td>
+                    <td>
+                        <div class="example">border-radius: 10px;</div>
+                    </td>
+                    <td>רדיוס פינות מותאם אישית בפיקסלים</td>
+                </tr>
+                <tr>
+                    <td>%</td>
+                    <td>
+                        <div class="example">border-radius: 50%;</div>
+                    </td>
+                    <td>פינות מעוגלות באופן יחסי לגודל האלמנט</td>
+                </tr>
+            </table>
+        </div>
+
+        <div id="border-shorthand" class="sub-section">
+            <h3>קיצור דרך לגבול (Border Shorthand)</h3>
+            <p>ניתן להגדיר גבול באמצעות מאפיין מקוצר הכולל את כל הערכים:</p>
+            <div class="example">border: 2px solid red;</div>
+            <p>בדוגמה זו, הערכים הם:</p>
+            <ul>
+                <li><strong>2px:</strong> עובי הגבול</li>
+                <li><strong>solid:</strong> סגנון הגבול</li>
+                <li><strong>red:</strong> צבע הגבול</li>
+            </ul>
+        </div>
+    </div>
+    </div>
+</body>
+</html>

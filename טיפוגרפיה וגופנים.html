@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="he">
+<head>
+    <meta charset="UTF-8">
+    <title>מדריך CSS - טיפוגרפיה וגופנים</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        h1, h2, h3 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        
+        .toc {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        .section {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: right;
+        }
+        
+        th {
+            background-color: #3498db;
+            color: white;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        .example {
+            background-color: #f8f9fa;
+            padding: 10px;
+            border-right: 3px solid #3498db;
+            margin: 10px 0;
+            direction: ltr;
+        }
+        
+        .note {
+            background-color: #fff3cd;
+            border-right: 4px solid #ffc107;
+            padding: 10px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>מדריך CSS - טיפוגרפיה וגופנים</h1>
+    
+    <div class="toc">
+        <h2>תוכן עניינים</h2>
+        <ul>
+            <li><a href="#font-size">גודל גופן (Font Size)</a></li>
+            <li><a href="#font-family">משפחת גופנים (Font Family)</a></li>
+            <li><a href="#font-weight">עובי גופן (Font Weight)</a></li>
+            <li><a href="#font-style">סגנון גופן (Font Style)</a></li>
+            <li><a href="#text-decoration">קישוט טקסט (Text Decoration)</a></li>
+            <li><a href="#text-transform">שינוי אותיות (Text Transform)</a></li>
+            <li><a href="#text-align">יישור טקסט (Text Align)</a></li>
+            <li><a href="#line-height">גובה שורה (Line Height)</a></li>
+            <li><a href="#letter-spacing">ריווח אותיות (Letter Spacing)</a></li>
+            <li><a href="#word-spacing">ריווח מילים (Word Spacing)</a></li>
+        </ul>
+    </div>
+
+    <div id="font-size" class="section">
+        <h2>גודל גופן (Font Size)</h2>
+        <p>הגדרת גודל הטקסט באלמנט</p>
+        
+        <table>
+            <tr>
+                <th>יחידת מידה</th>
+                <th>תיאור</th>
+                <th>דוגמה</th>
+                <th>הערות</th>
+            </tr>
+            <tr>
+                <td>px</td>
+                <td>פיקסלים - יחידה קבועה</td>
+                <td>
+                    <div class="example">
+                        font-size: 16px;
+                    </div>
+                </td>
+                <td>גודל מדויק, לא מגיב לשינויי תצוגה</td>
+            </tr>
+            <tr>
+                <td>em</td>
+                <td>יחסי לגודל הגופן של האלמנט ההורה</td>
+                <td>
+                    <div class="example">
+                        font-size: 1.2em;
+                    </div>
+                </td>
+                <td>טוב לשימוש בתוך אלמנטים מקוננים</td>
+            </tr>
+            <tr>
+                <td>rem</td>
+                <td>יחסי לגודל הגופן של אלמנט השורש</td>
+                <td>
+                    <div class="example">
+                        font-size: 1.5rem;
+                    </div>
+                </td>
+                <td>עקבי יותר מ-em, מומלץ לשימוש</td>
+            </tr>
+            <tr>
+                <td>%</td>
+                <td>אחוז מגודל ההורה</td>
+                <td>
+                    <div class="example">
+                        font-size: 120%;
+                    </div>
+                </td>
+                <td>דומה ל-em (100% = 1em)</td>
+            </tr>
+            <tr>
+                <td>vw</td>
+                <td>אחוז מרוחב החלון</td>
+                <td>
+                    <div class="example">
+                        font-size: 5vw;
+                    </div>
+                </td>
+                <td>מגיב לשינוי גודל החלון</td>
+            </tr>
+        </table>
+
+        <div class="note">
+            <strong>טיפ:</strong> מומלץ להשתמש ב-rem ליצירת עיצוב עקבי ונגיש
+        </div>
+    </div>
+
+    <div id="font-family" class="section">
+        <h2>משפחת גופנים (Font Family)</h2>
+        <table>
+            <tr>
+                <th>סוג</th>
+                <th>דוגמה</th>
+                <th>הסבר</th>
+            </tr>
+            <tr>
+                <td>גופן ספציפי</td>
+                <td>
+                    <div class="example">
+                        font-family: Arial;
+                    </div>
+                </td>
+                <td>שימוש בגופן מותקן במערכת</td>
+            </tr>
+            <tr>
+                <td>משפחת גופנים</td>
+                <td>
+                    <div class="example">
+                        font-family: Arial, Helvetica, sans-serif;
+                    </div>
+                </td>
+                <td>רשימת גיבוי של גופנים</td>
+            </tr>
+            <tr>
+                <td>גופן מותאם אישית</td>
+                <td>
+                    <div class="example">
+                        @font-face {
+                            font-family: 'CustomFont';
+                            src: url('font.woff2');
+                        }
+                    </div>
+                </td>
+                <td>הגדרת גופן מותאם אישית</td>
+            </tr>
+        </table>
+    </div>
+    <div id="font-weight" class="section">
+        <h2>עובי גופן (Font Weight)</h2>
+        <table>
+            <tr>
+                <th>ערך</th>
+                <th>משמעות</th>
+                <th>דוגמה</th>
+                <th>הערות</th>
+            </tr>
+            <tr>
+                <td>normal</td>
+                <td>עובי רגיל</td>
+                <td>
+                    <div class="example">
+                        font-weight: normal;
+                    </div>
+                </td>
+                <td>שווה ל-400</td>
+            </tr>
+            <tr>
+                <td>bold</td>
+                <td>מודגש</td>
+                <td>
+                    <div class="example">
+                        font-weight: bold;
+                    </div>
+                </td>
+                <td>שווה ל-700</td>
+            </tr>
+            <tr>
+                <td>100-900</td>
+                <td>ערכים מספריים</td>
+                <td>
+                    <div class="example">
+                        font-weight: 500;
+                    </div>
+                </td>
+                <td>דרגות עובי מדויקות</td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="text-decoration" class="section">
+        <h2>קישוט טקסט (Text Decoration)</h2>
+        <table>
+            <tr>
+                <th>ערך</th>
+                <th>משמעות</th>
+                <th>דוגמה</th>
+            </tr>
+            <tr>
+                <td>none</td>
+                <td>ללא קישוט</td>
+                <td>
+                    <div class="example">
+                        text-decoration: none;
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>underline</td>
+                <td>קו תחתון</td>
+                <td>
+                    <div class="example">
+                        text-decoration: underline;
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>line-through</td>
+                <td>קו חוצה</td>
+                <td>
+                    <div class="example">
+                        text-decoration: line-through;
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>overline</td>
+                <td>קו עליון</td>
+                <td>
+                    <div class="example">
+                        text-decoration: overline;
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="text-transform" class="section">
+        <h2>שינוי אותיות (Text Transform)</h2>
+        <table>
+            <tr>
+                <th>ערך</th>
+                <th>משמעות</th>
+                <th>דוגמה</th>
+            </tr>
+            <tr>
+                <td>none</td>
+                <td>ללא שינוי</td>
+                <td>
+                    <div class="example">
+                        text-transform: none;
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>capitalize</td>
+                <td>אות ראשונה גדולה בכל מילה</td>
+                <td>
+                    <div class="example">
+                        text-transform: capitalize;
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>uppercase</td>
+                <td>אותיות גדולות</td>
+                <td>
+                    <div class="example">
+                        text-transform: uppercase;
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>lowercase</td>
+                <td>אותיות קטנות</td>
+                <td>
+                    <div class="example">
+                        text-transform: lowercase;
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="line-height" class="section">
+        <h2>גובה שורה (Line Height)</h2>
+        <table>
+            <tr>
+                <th>סוג</th>
+                <th>דוגמה</th>
+                <th>הסבר</th>
+            </tr>
+            <tr>
+                <td>מספר</td>
+                <td>
+                    <div class="example">
+                        line-height: 1.5;
+                    </div>
+                </td>
+                <td>כפולה של גודל הגופן</td>
+            </tr>
+            <tr>
+                <td>אחוזים</td>
+                <td>
+                    <div class="example">
+                        line-height: 150%;
+                    </div>
+                </td>
+                <td>אחוז מגודל הגופן</td>
+            </tr>
+            <tr>
+                <td>יחידות</td>
+                <td>
+                    <div class="example">
+                        line-height: 20px;
+                    </div>
+                </td>
+                <td>גובה מדויק</td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="letter-spacing" class="section">
+        <h2>ריווח אותיות (Letter Spacing)</h2>
+        <table>
+            <tr>
+                <th>ערך</th>
+                <th>דוגמה</th>
+                <th>הסבר</th>
+            </tr>
+            <tr>
+                <td>normal</td>
+                <td>
+                    <div class="example">
+                        letter-spacing: normal;
+                    </div>
+                </td>
+                <td>ריווח רגיל</td>
+            </tr>
+            <tr>
+                <td>יחידות חיוביות</td>
+                <td>
+                    <div class="example">
+                        letter-spacing: 2px;
+                    </div>
+                </td>
+                <td>הגדלת המרווח</td>
+            </tr>
+            <tr>
+                <td>יחידות שליליות</td>
+                <td>
+                    <div class="example">
+                        letter-spacing: -1px;
+                    </div>
+                </td>
+                <td>הקטנת המרווח</td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="word-spacing" class="section">
+        <h2>ריווח מילים (Word Spacing)</h2>
+        <table>
+            <tr>
+                <th>ערך</th>
+                <th>דוגמה</th>
+                <th>הסבר</th>
+            </tr>
+            <tr>
+                <td>normal</td>
+                <td>
+                    <div class="example">
+                        word-spacing: normal;
+                    </div>
+                </td>
+                <td>ריווח רגיל</td>
+            </tr>
+            <tr>
+                <td>יחידות חיוביות</td>
+                <td>
+                    <div class="example">
+                        word-spacing: 4px;
+                    </div>
+                </td>
+                <td>הגדלת המרווח בין מילים</td>
+            </tr>
+            <tr>
+                <td>יחידות שליליות</td>
+                <td>
+                    <div class="example">
+                        word-spacing: -2px;
+                    </div>
+                </td>
+                <td>הקטנת המרווח בין מילים</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

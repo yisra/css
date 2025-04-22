@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="he">
+<head>
+    <meta charset="UTF-8">
+    <title>מדריך CSS - מיקום ותצוגה</title>
+    <style>
+        /* Same base styles as previous document */
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        h1, h2, h3 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        
+        .toc, .section {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: right;
+        }
+        
+        th {
+            background-color: #3498db;
+            color: white;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        .example {
+            background-color: #f8f9fa;
+            padding: 10px;
+            border-right: 3px solid #3498db;
+            margin: 10px 0;
+            direction: ltr;
+        }
+    </style>
+</head>
+<body>
+    <h1>מדריך CSS - גבולות ומסגרות, מיקום ותצוגה</h1>
+    
+    <div class="toc">
+        <h2>תוכן עניינים</h2>
+        <ul>
+                <li><a href="#position-display">מיקום ותצוגה</a>
+                <ul>
+                    <li><a href="#position">מיקום</a></li>
+                    <li><a href="#z-index">סדר שכבות (Z-Index)</a></li>
+                    <li><a href="#display">תצוגה</a></li>
+                    <li><a href="#visibility">נראות</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    
+    <div id="position-display" class="section">
+        <h2>מיקום ותצוגה (Position and Display)</h2>
+
+        <div id="position" class="sub-section">
+            <h3>מיקום (Position)</h3>
+            <table>
+                <tr>
+                    <th>ערך</th>
+                    <th>דוגמה</th>
+                    <th>הסבר</th>
+                </tr>
+                <tr>
+                    <td>static</td>
+                    <td>
+                        <div class="example">position: static;</div>
+                    </td>
+                    <td>המיקום ברירת המחדל, ללא מיקום מיוחד</td>
+                </tr>
+                <tr>
+                    <td>relative</td>
+                    <td>
+                        <div class="example">position: relative;</div>
+                    </td>
+                    <td>מיקום יחסי למיקומו הרגיל</td>
+                </tr>
+                <tr>
+                    <td>absolute</td>
+                    <td>
+                        <div class="example">position: absolute;</div>
+                    </td>
+                    <td>מיקום יחסית לאלמנט האב</td>
+                </tr>
+                <tr>
+                    <td>fixed</td>
+                    <td>
+                        <div class="example">position: fixed;</div>
+                    </td>
+                    <td>מיקום קבוע ביחס לחלון הדפדפן</td>
+                </tr>
+                <tr>
+                    <td>sticky</td>
+                    <td>
+                        <div class="example">position: sticky;</div>
+                    </td>
+                    <td>מיקום "דביק" המשתנה בהתאם לגלילה</td>
+                </tr>
+            </table>
+        </div>
+
+        <div id="z-index" class="sub-section">
+            <h3>סדר שכבות (Z-Index)</h3>
+            <table>
+                <tr>
+                    <th>ערך</th>
+                    <th>דוגמה</th>
+                    <th>הסבר</th>
+                </tr>
+                <tr>
+                    <td>מספר</td>
+                    <td>
+                        <div class="example">z-index: 10;</div>
+                    </td>
+                    <td>קובע את סדר הופעת האלמנט על ציר ה-Z</td>
+                </tr>
+                <tr>
+                    <td>auto</td>
+                    <td>
+                        <div class="example">z-index: auto;</div>
+                    </td>
+                    <td>ברירת מחדל, ללא סדר מוגדר</td>
+                </tr>
+            </table>
+        </div>
+
+        <div id="display" class="sub-section">
+            <h3>תצוגה (Display)</h3>
+            <table>
+                <tr>
+                    <th>ערך</th>
+                    <th>דוגמה</th>
+                    <th>הסבר</th>
+                </tr>
+                <tr>
+                    <td>block</td>
+                    <td>
+                        <div class="example">display: block;</div>
+                    </td>
+                    <td>אלמנט קו-חדש (Block)</td>
+                </tr>
+                <tr>
+                    <td>inline</td>
+                    <td>
+                        <div class="example">display: inline;</div>
+                    </td>
+                    <td>אלמנט בקו הטקסט (Inline)</td>
+                </tr>
+                <tr>
+                    <td>flex</td>
+                    <td>
+                        <div class="example">display: flex;</div>
+                    </td>
+                    <td>תצוגת Flexbox</td>
+                </tr>
+                <tr>
+                    <td>grid</td>
+                    <td>
+                        <div class="example">display: grid;</div>
+                    </td>
+                    <td>תצוגת Grid</td>
+                </tr>
+            </table>
+        </div>
+
+        <div id="visibility" class="sub-section">
+            <h3>נראות (Visibility)</h3>
+            <table>
+                <tr>
+                    <th>ערך</th>
+                    <th>דוגמה</th>
+                    <th>הסבר</th>
+                </tr>
+                <tr>
+                    <td>visible</td>
+                    <td>
+                        <div class="example">visibility: visible;</div>
+                    </td>
+                    <td>האלמנט נראה</td>
+                </tr>
+                <tr>
+                    <td>hidden</td>
+                    <td>
+                        <div class="example">visibility: hidden;</div>
+                    </td>
+                    <td>האלמנט מוסתר אך תופס מקום</td>
+                </tr>
+                <tr>
+                    <td>collapse</td>
+                    <td>
+                        <div class="example">visibility: collapse;</div>
+                    </td>
+                    <td>משמש לרוב בטבלאות, מסתיר ואינו תופס מקום</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

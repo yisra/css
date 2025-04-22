@@ -1,0 +1,129 @@
+<a href="מפתח.html" class="nav-button">🏠</a>
+<!DOCTYPE html>
+<html dir="rtl" lang="he">
+<head>
+    <meta charset="UTF-8">
+    <title>מדריך CSS - צבעים ושקיפות</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        h1, h2, h3 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        .toc, .section {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: right;
+        }
+
+        th {
+            background-color: #3498db;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .example {
+            background-color: #f8f9fa;
+            padding: 10px;
+            border-right: 3px solid #3498db;
+            margin: 10px 0;
+            direction: ltr;
+        }
+    </style>
+</head>
+<body>
+    <h1>מדריך CSS - צבעים ושקיפות</h1>
+
+    <div class="toc">
+        <h2>תוכן עניינים</h2>
+        <ul>
+            <li><a href="#colors">צבעים</a>
+                <ul>
+                    <li><a href="#color-names">שמות צבעים</a></li>
+                    <li><a href="#hex-colors">קודי HEX</a></li>
+                    <li><a href="#rgb-colors">צבעי RGB</a></li>
+                    <li><a href="#hsl-colors">צבעי HSL</a></li>
+                </ul>
+            </li>
+            <li><a href="#opacity">שקיפות</a>
+                <ul>
+                    <li><a href="#rgba">RGBA</a></li>
+                    <li><a href="#opacity-property">מאפיין השקיפות</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div id="colors" class="section">
+        <h2>צבעים (Colors)</h2>
+
+        <div id="color-names" class="sub-section">
+            <h3>שמות צבעים</h3>
+            <p>ניתן להשתמש בשמות צבעים מוגדרים מראש כמו <code>red</code>, <code>blue</code>, או <code>green</code>.</p>
+            <div class="example">color: red;</div>
+        </div>
+
+        <div id="hex-colors" class="sub-section">
+            <h3>קודי HEX</h3>
+            <p>קוד HEX הוא ייצוג הקסדצימלי של צבע, כמו <code>#ff0000</code> לאדום.</p>
+            <div class="example">color: #ff0000;</div>
+        </div>
+
+        <div id="rgb-colors" class="sub-section">
+            <h3>צבעי RGB</h3>
+            <p>RGB מאפשר לקבוע צבע באמצעות ערכי אדום, ירוק וכחול.</p>
+            <div class="example">color: rgb(255, 0, 0);</div>
+        </div>
+
+        <div id="hsl-colors" class="sub-section">
+            <h3>צבעי HSL</h3>
+            <p>HSL מייצג גוון (Hue), רוויה (Saturation) ובהירות (Lightness).</p>
+            <div class="example">color: hsl(0, 100%, 50%);</div>
+        </div>
+    </div>
+
+    <div id="opacity" class="section">
+        <h2>שקיפות (Opacity)</h2>
+
+        <div id="rgba" class="sub-section">
+            <h3>RGBA</h3>
+            <p>RGBA דומה ל-RGB, אך כולל ערך שקיפות (Alpha) הנע בין 0 ל-1.</p>
+            <div class="example">background-color: rgba(255, 0, 0, 0.5);</div>
+        </div>
+
+        <div id="opacity-property" class="sub-section">
+            <h3>מאפיין השקיפות (Opacity)</h3>
+            <p>מאפיין <code>opacity</code> משפיע על כל האלמנט, כולל התוכן שבו.</p>
+            <div class="example">opacity: 0.5;</div>
+        </div>
+    </div>
+</body>
+</html>
+<a href="#" class="nav-button">⬆</a>
+

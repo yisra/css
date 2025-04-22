@@ -1,0 +1,2154 @@
+
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מילון עברי-אנגלי</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            direction: rtl;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            color: #fff;
+            text-align: center;
+            background-color: #007BFF;
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        a {
+            display: block;
+            text-align: center;
+            margin: 20px;
+            font-size: 1.2em;
+            color: #007BFF;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        th {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px;
+            text-align: right;
+        }
+        td {
+            padding: 10px;
+            text-align: right;
+            transition: transform 0.2s;
+        }
+        tr:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:nth-child(odd) {
+            background-color: #e9ecef;
+        }
+        input[type="text"], select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>מילון עברי-אנגלי</h1>
+<input type="text" id="searchInput" placeholder="חפש מילה בעברית או באנגלית" onkeyup="filterTable()">
+<select id="sortSelect" onchange="sortTable()">
+    <option value="default">מיין לפי</option>
+    <option value="alphabet">סדר אלף-בית</option>
+    <option value="abc">סדר A, B, C</option>
+    <option value="category">קטגוריה</option>
+    <option value="root">שורש</option> <!-- מיון לפי שורש -->
+</select>
+
+<table id="dictionaryTable">
+    <thead>
+        <tr>
+            <th>עברית</th>
+            <th>אנגלית</th>
+            <th>קטגוריה</th>
+            <th>שורש</th> <!-- עמודת שורש -->
+        </tr>
+    </thead>
+    <tbody>
+        <!-- הוספת מילים נוספות -->
+    <!-- מילים קיימות -->
+    <tr>
+        <td>תפוח</td>
+        <td>Apple</td>
+        <td>אוכל</td>
+        <td>תפח</td>
+    </tr>
+    <tr>
+        <td>מלח</td>
+        <td>Salt</td>
+        <td>אוכל</td>
+        <td>מלח</td>
+    </tr>
+    <tr>
+        <td>מים</td>
+        <td>Water</td>
+        <td>אוכל</td>
+        <td>מים</td>
+    </tr>
+    <tr>
+        <td>לחם</td>
+        <td>Bread</td>
+        <td>אוכל</td>
+        <td>לחם</td>
+    </tr>
+    <tr>
+        <td>ביצה</td>
+        <td>Egg</td>
+        <td>אוכל</td>
+        <td>בצה</td>
+    </tr>
+    <tr>
+        <td>ללכת</td>
+        <td>To go</td>
+        <td>פעל</td>
+        <td>הלך</td>
+    </tr>
+    <tr>
+        <td>לשבת</td>
+        <td>To sit</td>
+        <td>פעל</td>
+        <td>ישב</td>
+    </tr>
+    <tr>
+        <td>לשחק</td>
+        <td>To play</td>
+        <td>פעל</td>
+        <td>שחק</td>
+    </tr>
+    <tr>
+        <td>לקרוא</td>
+        <td>To read</td>
+        <td>פעל</td>
+        <td>קרא</td>
+    </tr>
+    <tr>
+        <td>לכתוב</td>
+        <td>To write</td>
+        <td>פעל</td>
+        <td>כתב</td>
+    </tr>
+    <tr>
+        <td>ספר</td>
+        <td>Book</td>
+        <td>חינוך</td>
+        <td>ספר</td>
+    </tr>
+    <tr>
+        <td>מורה</td>
+        <td>Teacher</td>
+        <td>חינוך</td>
+        <td>הורה</td>
+    </tr>
+    <tr>
+        <td>חינוך</td>
+        <td>Education</td>
+        <td>חינוך</td>
+        <td>חנך</td>
+    </tr>
+    <tr>
+        <td>משפחה</td>
+        <td>Family</td>
+        <td>חיים</td>
+        <td>משפח</td>
+    </tr>
+    <tr>
+        <td>עבודה</td>
+        <td>Work</td>
+        <td>חיים</td>
+        <td>עבוד</td>
+    </tr>
+    <tr>
+        <td>חבר</td>
+        <td>Friend</td>
+        <td>חיים</td>
+        <td>חבר</td>
+    </tr>
+    <tr>
+        <td>חיים</td>
+        <td>Life</td>
+        <td>פילוסופיה</td>
+        <td>חיים</td>
+    </tr>
+    <tr>
+        <td>אהבה</td>
+        <td>Love</td>
+        <td>פילוסופיה</td>
+        <td>אהב</td>
+    </tr>
+    <tr>
+        <td>מחשבה</td>
+        <td>Thought</td>
+        <td>פילוסופיה</td>
+        <td>מחש</td>
+    </tr>
+    <tr>
+        <td>אמת</td>
+        <td>Truth</td>
+        <td>פילוסופיה</td>
+        <td>אמת</td>
+    </tr>
+    <tr>
+        <td>חופש</td>
+        <td>Freedom</td>
+        <td>פילוסופיה</td>
+        <td>חופש</td>
+    </tr>
+    <tr>
+        <td>שולחן</td>
+        <td>Table</td>
+        <td>רהיטים</td>
+        <td>שולח</td>
+    </tr>
+    <tr>
+        <td>כיסא</td>
+        <td>Chair</td>
+        <td>רהיטים</td>
+        <td>כיסא</td>
+    </tr>
+    <tr>
+        <td>מיטה</td>
+        <td>Bed</td>
+        <td>רהיטים</td>
+        <td>מתה</td>
+    </tr>
+    <tr>
+        <td>ארון</td>
+        <td>Cabinet</td>
+        <td>רהיטים</td>
+        <td>ארון</td>
+    </tr>
+    <tr>
+        <td>שידה</td>
+        <td>Nightstand</td>
+        <td>רהיטים</td>
+        <td>שיד</td>
+    </tr>
+    <!-- הוספת 150 מילים נוספות -->
+    <tr>
+        <td>תפוז</td>
+        <td>Orange</td>
+        <td>אוכל</td>
+        <td>תפז</td>
+    </tr>
+    <tr>
+        <td>אגס</td>
+        <td>Pear</td>
+        <td>אוכל</td>
+        <td>אגס</td>
+    </tr>
+    <tr>
+        <td>אורז</td>
+        <td>Rice</td>
+        <td>אוכל</td>
+        <td>אורז</td>
+    </tr>
+    <tr>
+        <td>תפוח אדמה</td>
+        <td>Potato</td>
+        <td>אוכל</td>
+        <td>תפח</td>
+    </tr>
+    <tr>
+        <td>סוכר</td>
+        <td>Sugar</td>
+        <td>אוכל</td>
+        <td>סוכר</td>
+    </tr>
+    <tr>
+        <td>שום</td>
+        <td>Garlic</td>
+        <td>אוכל</td>
+        <td>שום</td>
+    </tr>
+    <tr>
+        <td>בצל</td>
+        <td>Onion</td>
+        <td>אוכל</td>
+        <td>בצל</td>
+    </tr>
+    <tr>
+        <td>גזר</td>
+        <td>Carrot</td>
+        <td>אוכל</td>
+        <td>גזר</td>
+    </tr>
+    <tr>
+        <td>קישוא</td>
+        <td>Zucchini</td>
+        <td>אוכל</td>
+        <td>קיש</td>
+    </tr>
+    <tr>
+        <td>חסה</td>
+        <td>Lettuce</td>
+        <td>אוכל</td>
+        <td>חס</td>
+    </tr>
+    <tr>
+        <td>תפוח עץ</td>
+        <td>Fruit Tree</td>
+        <td>טבע</td>
+        <td>תפח</td>
+    </tr>
+    <tr>
+        <td>גפן</td>
+        <td>Vine</td>
+        <td>טבע</td>
+        <td>גפנ</td>
+    </tr>
+    <tr>
+        <td>שקד</td>
+        <td>Almond</td>
+        <td>אוכל</td>
+        <td>שקד</td>
+    </tr>
+    <tr>
+        <td>אגוז</td>
+        <td>Nut</td>
+        <td>אוכל</td>
+        <td>אגז</td>
+    </tr>
+    <tr>
+        <td>זית</td>
+        <td>Olive</td>
+        <td>אוכל</td>
+        <td>זית</td>
+    </tr>
+    <tr>
+        <td>דג</td>
+        <td>Fish</td>
+        <td>אוכל</td>
+        <td>דג</td>
+    </tr>
+    <tr>
+        <td>עוף</td>
+        <td>Chicken</td>
+        <td>אוכל</td>
+        <td>עוף</td>
+    </tr>
+    <tr>
+        <td>בשר</td>
+        <td>Meat</td>
+        <td>אוכל</td>
+        <td>בשר</td>
+    </tr>
+    <tr>
+        <td>פסטה</td>
+        <td>Pasta</td>
+        <td>אוכל</td>
+        <td>פסט</td>
+    </tr>
+    <tr>
+        <td>סלט</td>
+        <td>Salad</td>
+        <td>אוכל</td>
+        <td>סלט</td>
+    </tr>
+    <tr>
+        <td>ממרח</td>
+        <td>Spread</td>
+        <td>אוכל</td>
+        <td>מרח</td>
+    </tr>
+    <tr>
+        <td>מאפה</td>
+        <td>Pastery</td>
+        <td>אוכל</td>
+        <td>אפה</td>
+    </tr>
+    <tr>
+        <td>קפה</td>
+        <td>Coffee</td>
+        <td>אוכל</td>
+        <td>קפה</td>
+    </tr>
+    <tr>
+        <td>תה</td>
+        <td>Tea</td>
+        <td>אוכל</td>
+        <td>תה</td>
+    </tr>
+    <tr>
+        <td>מיץ</td>
+        <td>Juice</td>
+        <td>אוכל</td>
+        <td>מיץ</td>
+    </tr>
+    <tr>
+        <td>עוגה</td>
+        <td>Cake</td>
+        <td>אוכל</td>
+        <td>עוג</td>
+    </tr>
+    <tr>
+        <td>סוכריה</td>
+        <td>Candy</td>
+        <td>אוכל</td>
+        <td>סוכר</td>
+    </tr>
+    <tr>
+        <td>חטיף</td>
+        <td>Snack</td>
+        <td>אוכל</td>
+        <td>חטף</td>
+    </tr>
+    <tr>
+        <td>קינוח</td>
+        <td>Dessert</td>
+        <td>אוכל</td>
+        <td>קינח</td>
+    </tr>
+    <tr>
+        <td>שוקולד</td>
+        <td>Chocolate</td>
+        <td>אוכל</td>
+        <td>שוקל</td>
+    </tr>
+    <tr>
+        <td>גלידה</td>
+        <td>Ice Cream</td>
+        <td>אוכל</td>
+        <td>גלד</td>
+    </tr>
+    <tr>
+        <td>חלב</td>
+        <td>Milk</td>
+        <td>אוכל</td>
+        <td>חלב</td>
+    </tr>
+    <tr>
+        <td>יוגורט</td>
+        <td>Yogurt</td>
+        <td>אוכל</td>
+        <td>יוגורט</td>
+    </tr>
+    <tr>
+        <td>שמן</td>
+        <td>Oil</td>
+        <td>אוכל</td>
+        <td>שמן</td>
+    </tr>
+    <tr>
+        <td>חמאה</td>
+        <td>Butter</td>
+        <td>אוכל</td>
+        <td>חמנ</td>
+    </tr>
+    <tr>
+        <td>גבינה</td>
+        <td>Cheese</td>
+        <td>אוכל</td>
+        <td>גבנ</td>
+    </tr>
+    <tr>
+        <td>פיצה</td>
+        <td>Pizza</td>
+        <td>אוכל</td>
+        <td>פיצ</td>
+    </tr>
+    <tr>
+        <td>בורגרים</td>
+        <td>Burgers</td>
+        <td>אוכל</td>
+        <td>בורג</td>
+    </tr>
+    <tr>
+        <td>פנקייק</td>
+        <td>Pancake</td>
+        <td>אוכל</td>
+        <td>פנק</td>
+    </tr>
+    <tr>
+        <td>סושי</td>
+        <td>Sushi</td>
+        <td>אוכל</td>
+        <td>סוש</td>
+    </tr>
+    <tr>
+        <td>פירות ים</td>
+        <td>Seafood</td>
+        <td>אוכל</td>
+        <td>פירות</td>
+    </tr>
+    <tr>
+        <td>ירקות</td>
+        <td>Vegetables</td>
+        <td>אוכל</td>
+        <td>ירק</td>
+    </tr>
+    <tr>
+        <td>קטשופ</td>
+        <td>Ketchup</td>
+        <td>אוכל</td>
+        <td>קטש</td>
+    </tr>
+    <tr>
+        <td>ממרח שוקולד</td>
+        <td>Chocolate Spread</td>
+        <td>אוכל</td>
+        <td>ממרח</td>
+    </tr>
+    <tr>
+        <td>שייק</td>
+        <td>Shake</td>
+        <td>אוכל</td>
+        <td>שייק</td>
+    </tr>
+    <tr>
+        <td>סלט פירות</td>
+        <td>Fruit Salad</td>
+        <td>אוכל</td>
+        <td>סלט</td>
+    </tr>
+    <tr>
+        <td>מנורה</td>
+        <td>Lamp</td>
+        <td>רהיטים</td>
+        <td>נור</td>
+    </tr>
+    <tr>
+        <td>מראה</td>
+        <td>Mirror</td>
+        <td>רהיטים</td>
+        <td>ראה</td>
+    </tr>
+    <tr>
+        <td>שטיח</td>
+        <td>Carpet</td>
+        <td>רהיטים</td>
+        <td>שטח</td>
+    </tr>
+    <tr>
+        <td>כוננית</td>
+        <td>Bookshelf</td>
+        <td>רהיטים</td>
+        <td>כנן</td>
+    </tr>
+    <tr>
+        <td>מדף</td>
+        <td>Shelf</td>
+        <td>רהיטים</td>
+        <td>מדף</td>
+    </tr>
+    <tr>
+        <td>ספה</td>
+        <td>Sofa</td>
+        <td>רהיטים</td>
+        <td>ספה</td>
+    </tr>
+    <tr>
+        <td>כריות</td>
+        <td>Pillows</td>
+        <td>רהיטים</td>
+        <td>כרית</td>
+    </tr>
+    <tr>
+        <td>וילון</td>
+        <td>Curtain</td>
+        <td>רהיטים</td>
+        <td>וילן</td>
+    </tr>
+    <tr>
+        <td>שולחן קפה</td>
+        <td>Coffee Table</td>
+        <td>רהיטים</td>
+        <td>שולח</td>
+    </tr>
+    <tr>
+        <td>שזלונג</td>
+        <td>Chaise Longue</td>
+        <td>רהיטים</td>
+        <td>שזל</td>
+    </tr>
+    <tr>
+        <td>פינת אוכל</td>
+        <td>Dining Table</td>
+        <td>רהיטים</td>
+        <td>אוכל</td>
+    </tr>
+    <tr>
+        <td>כונן נעליים</td>
+        <td>Shoe Rack</td>
+        <td>רהיטים</td>
+        <td>כנן</td>
+    </tr>
+    <tr>
+        <td>שידת מגירות</td>
+        <td>Drawer Chest</td>
+        <td>רהיטים</td>
+        <td>שיד</td>
+    </tr>
+    <tr>
+        <td>מנורת קיר</td>
+        <td>Wall Lamp</td>
+        <td>רהיטים</td>
+        <td>נור</td>
+    </tr>
+    <tr>
+        <td>שולחן עבודה</td>
+        <td>Desk</td>
+        <td>רהיטים</td>
+        <td>שולח</td>
+    </tr>
+    <tr>
+        <td>כיסא הדום</td>
+        <td>Stool</td>
+        <td>רהיטים</td>
+        <td>הדם</td>
+    </tr>
+    <tr>
+        <td>מתלה בגדים</td>
+        <td>Clothes Hanger</td>
+        <td>רהיטים</td>
+        <td>תלה</td>
+    </tr>
+    <tr>
+        <td>מזרן</td>
+        <td>Mattress</td>
+        <td>רהיטים</td>
+        <td>זרן</td>
+    </tr>
+    <tr>
+        <td>ארגז מצעים</td>
+        <td>Linen Chest</td>
+        <td>רהיטים</td>
+        <td>ארגז</td>
+    </tr>
+    <tr>
+        <td>מחסום חדר</td>
+        <td>Room Divider</td>
+        <td>רהיטים</td>
+        <td>חסם</td>
+    </tr>
+    <tr>
+        <td>מנורת שולחן</td>
+        <td>Table Lamp</td>
+        <td>רהיטים</td>
+        <td>נור</td>
+    </tr>
+    <tr>
+        <td>מעמד לספרים</td>
+        <td>Book Stand</td>
+        <td>רהיטים</td>
+        <td>עמד</td>
+    </tr>
+    <tr>
+        <td>כוסית נרות</td>
+        <td>Candle Holder</td>
+        <td>רהיטים</td>
+        <td>נרת</td>
+    </tr>
+    <tr>
+        <td>שולחן צד</td>
+        <td>Side Table</td>
+        <td>רהיטים</td>
+        <td>שולח</td>
+    </tr>
+    <tr>
+        <td>מראה מעוצבת</td>
+        <td>Decorative Mirror</td>
+        <td>רהיטים</td>
+        <td>ראה</td>
+    </tr>
+    <tr>
+        <td>הר</td>
+        <td>Mountain</td>
+        <td>טבע</td>
+        <td>הרר</td>
+    </tr>
+    <tr>
+        <td>ים</td>
+        <td>Sea</td>
+        <td>טבע</td>
+        <td>ימם</td>
+    </tr>
+    <tr>
+        <td>נהר</td>
+        <td>River</td>
+        <td>טבע</td>
+        <td>נהר</td>
+    </tr>
+    <tr>
+        <td>שמיים</td>
+        <td>Sky</td>
+        <td>טבע</td>
+        <td>שמם</td>
+    </tr>
+    <tr>
+        <td>ענן</td>
+        <td>Cloud</td>
+        <td>טבע</td>
+        <td>ענן</td>
+    </tr>
+    <tr>
+        <td>רוח</td>
+        <td>Wind</td>
+        <td>טבע</td>
+        <td>רוח</td>
+    </tr>
+    <tr>
+        <td>גשם</td>
+        <td>Rain</td>
+        <td>טבע</td>
+        <td>גשם</td>
+    </tr>
+    <tr>
+        <td>שמש</td>
+        <td>Sun</td>
+        <td>טבע</td>
+        <td>שמש</td>
+    </tr>
+    <tr>
+        <td>ירח</td>
+        <td>Moon</td>
+        <td>טבע</td>
+        <td>ירח</td>
+    </tr>
+    <tr>
+        <td>כוכב</td>
+        <td>Star</td>
+        <td>טבע</td>
+        <td>כוכב</td>
+    </tr>
+    <tr>
+        <td>יער</td>
+        <td>Forest</td>
+        <td>טבע</td>
+        <td>יעיר</td>
+    </tr>
+    <tr>
+        <td>דשא</td>
+        <td>Grass</td>
+        <td>טבע</td>
+        <td>דשא</td>
+    </tr>
+    <tr>
+        <td>פרח</td>
+        <td>Flower</td>
+        <td>טבע</td>
+        <td>פרח</td>
+    </tr>
+    <tr>
+        <td>עץ</td>
+        <td>Tree</td>
+        <td>טבע</td>
+        <td>עצץ</td>
+    </tr>
+    <tr>
+        <td>סלע</td>
+        <td>Rock</td>
+        <td>טבע</td>
+        <td>סלע</td>
+    </tr>
+    <tr>
+        <td>חול</td>
+        <td>Sand</td>
+        <td>טבע</td>
+        <td>חול</td>
+    </tr>
+    <tr>
+        <td>מדבר</td>
+        <td>Desert</td>
+        <td>טבע</td>
+        <td>דבר</td>
+    </tr>
+    <tr>
+        <td>אדמה</td>
+        <td>Earth</td>
+        <td>טבע</td>
+        <td>אדם</td>
+    </tr>
+    <tr>
+        <td>נוף</td>
+        <td>Landscape</td>
+        <td>טבע</td>
+        <td>נוף</td>
+    </tr>
+    <tr>
+        <td>אש</td>
+        <td>Fire</td>
+        <td>טבע</td>
+        <td>אשש</td>
+    </tr>
+    <tr>
+        <td>מערה</td>
+        <td>Cave</td>
+        <td>טבע</td>
+        <td>ערה</td>
+    </tr>
+    <tr>
+        <td>מפל</td>
+        <td>Waterfall</td>
+        <td>טבע</td>
+        <td>נפל</td>
+    </tr>
+    <tr>
+        <td>אי</td>
+        <td>Island</td>
+        <td>טבע</td>
+        <td>אוה</td>
+    </tr>
+    <tr>
+        <td>אוקיינוס</td>
+        <td>Ocean</td>
+        <td>טבע</td>
+        <td>קינ</td>
+    </tr>
+    <tr>
+        <td>חקלאות</td>
+        <td>Agriculture</td>
+        <td>טבע</td>
+        <td>חקל</td>
+    </tr>
+    <tr>
+        <td>אב</td>
+        <td>Father</td>
+        <td>משפחה</td>
+        <td>אבב</td>
+    </tr>
+    <tr>
+        <td>אמא</td>
+        <td>Mother</td>
+        <td>משפחה</td>
+        <td>אמם</td>
+    </tr>
+    <tr>
+        <td>אח</td>
+        <td>Brother</td>
+        <td>משפחה</td>
+        <td>אחח</td>
+    </tr>
+    <tr>
+        <td>אחות</td>
+        <td>Sister</td>
+        <td>משפחה</td>
+        <td>אחת</td>
+    </tr>
+    <tr>
+        <td>סבא</td>
+        <td>Grandfather</td>
+        <td>משפחה</td>
+        <td>סבב</td>
+    </tr>
+    <tr>
+        <td>סבתא</td>
+        <td>Grandmother</td>
+        <td>משפחה</td>
+        <td>סבת</td>
+    </tr>
+    <tr>
+        <td>דוד</td>
+        <td>Uncle</td>
+        <td>משפחה</td>
+        <td>דוד</td>
+    </tr>
+    <tr>
+        <td>דודה</td>
+        <td>Aunt</td>
+        <td>משפחה</td>
+        <td>דוד</td>
+    </tr>
+    <tr>
+        <td>בן</td>
+        <td>Son</td>
+        <td>משפחה</td>
+        <td>בנה</td>
+    </tr>
+    <tr>
+        <td>בת</td>
+        <td>Daughter</td>
+        <td>משפחה</td>
+        <td>בתת</td>
+    </tr>
+    <tr>
+        <td>נכד</td>
+        <td>Grandson</td>
+        <td>משפחה</td>
+        <td>נכד</td>
+    </tr>
+    <tr>
+        <td>נכדה</td>
+        <td>Granddaughter</td>
+        <td>משפחה</td>
+        <td>נכד</td>
+    </tr>
+    <tr>
+        <td>בן דוד</td>
+        <td>Cousin (male)</td>
+        <td>משפחה</td>
+        <td>דוד</td>
+    </tr>
+    <tr>
+        <td>בת דודה</td>
+        <td>Cousin (female)</td>
+        <td>משפחה</td>
+        <td>דוד</td>
+    </tr>
+    <tr>
+        <td>חם</td>
+        <td>Son-in-law</td>
+        <td>משפחה</td>
+        <td>חתם</td>
+    </tr>
+    <tr>
+        <td>כלה</td>
+        <td>Daughter-in-law</td>
+        <td>משפחה</td>
+        <td>כלל</td>
+    </tr>
+    <tr>
+        <td>אחיין</td>
+        <td>Nephew</td>
+        <td>משפחה</td>
+        <td>אחנ</td>
+    </tr>
+    <tr>
+        <td>אחיינית</td>
+        <td>Niece</td>
+        <td>משפחה</td>
+        <td>אחנ</td>
+    </tr>
+    <tr>
+        <td>הורה</td>
+        <td>Parent</td>
+        <td>משפחה</td>
+        <td>הרה</td>
+    </tr>
+    <tr>
+        <td>צאצא</td>
+        <td>Descendant</td>
+        <td>משפחה</td>
+        <td>צאצ</td>
+    </tr>
+    <tr>
+        <td>אח מאומץ</td>
+        <td>Adopted Brother</td>
+        <td>משפחה</td>
+        <td>אמץ</td>
+    </tr>
+    <tr>
+        <td>אחות מאומצת</td>
+        <td>Adopted Sister</td>
+        <td>משפחה</td>
+        <td>אמץ</td>
+    </tr>
+    <tr>
+        <td>זוג</td>
+        <td>Couple</td>
+        <td>משפחה</td>
+        <td>זווג</td>
+    </tr>
+    <tr>
+        <td>גרעין משפחתי</td>
+        <td>Nuclear Family</td>
+        <td>משפחה</td>
+        <td>גרע</td>
+    </tr>
+    <tr>
+        <td>משפחה מורחבת</td>
+        <td>Extended Family</td>
+        <td>משפחה</td>
+        <td>רחב</td>
+    </tr>
+    <tr>
+        <td>בריאות</td>
+        <td>Health</td>
+        <td>חיים</td>
+        <td>ברא</td>
+    </tr>
+    <tr>
+        <td>חינוך</td>
+        <td>Education</td>
+        <td>חיים</td>
+        <td>חנך</td>
+    </tr>
+    <tr>
+        <td>קריירה</td>
+        <td>Career</td>
+        <td>חיים</td>
+        <td>קרר</td>
+    </tr>
+    <tr>
+        <td>כסף</td>
+        <td>Money</td>
+        <td>חיים</td>
+        <td>כסף</td>
+    </tr>
+    <tr>
+        <td>הכנסה</td>
+        <td>Income</td>
+        <td>חיים</td>
+        <td>כנס</td>
+    </tr>
+    <tr>
+        <td>השכלה</td>
+        <td>Education</td>
+        <td>חיים</td>
+        <td>שכל</td>
+    </tr>
+    <tr>
+        <td>מגורים</td>
+        <td>Residence</td>
+        <td>חיים</td>
+        <td>גור</td>
+    </tr>
+    <tr>
+        <td>אורח חיים</td>
+        <td>Lifestyle</td>
+        <td>חיים</td>
+        <td>חיה</td>
+    </tr>
+    <tr>
+        <td>חלום</td>
+        <td>Dream</td>
+        <td>חיים</td>
+        <td>חלם</td>
+    </tr>
+    <tr>
+        <td>מטרה</td>
+        <td>Goal</td>
+        <td>חיים</td>
+        <td>הרה</td>
+    </tr>
+    <tr>
+        <td>הצלחה</td>
+        <td>Success</td>
+        <td>חיים</td>
+        <td>צלח</td>
+    </tr>
+    <tr>
+        <td>חברות</td>
+        <td>Friendship</td>
+        <td>חיים</td>
+        <td>חבר</td>
+    </tr>
+    <tr>
+        <td>זוגיות</td>
+        <td>Relationship</td>
+        <td>חיים</td>
+        <td>זוג</td>
+    </tr>
+    <tr>
+        <td>בחירה</td>
+        <td>Choice</td>
+        <td>חיים</td>
+        <td>בחר</td>
+    </tr>
+    <tr>
+        <td>התפתחות</td>
+        <td>Development</td>
+        <td>חיים</td>
+        <td>פתח</td>
+    </tr>
+    <tr>
+        <td>תקשורת</td>
+        <td>Communication</td>
+        <td>חיים</td>
+        <td>קשר</td>
+    </tr>
+    <tr>
+        <td>חופשה</td>
+        <td>Vacation</td>
+        <td>חיים</td>
+        <td>חפש</td>
+    </tr>
+    <tr>
+        <td>עניין</td>
+        <td>Interest</td>
+        <td>חיים</td>
+        <td>ענה</td>
+    </tr>
+    <tr>
+        <td>תחביב</td>
+        <td>Hobby</td>
+        <td>חיים</td>
+        <td>חבב</td>
+    </tr>
+    <tr>
+        <td>משמעות</td>
+        <td>Meaning</td>
+        <td>חיים</td>
+        <td>שמע</td>
+    </tr>
+    <tr>
+        <td>אתגר</td>
+        <td>Challenge</td>
+        <td>חיים</td>
+        <td>גרה</td>
+    </tr>
+    <tr>
+        <td>התמודדות</td>
+        <td>Coping</td>
+        <td>חיים</td>
+        <td>דדה</td>
+    </tr>
+    <tr>
+        <td>יעד</td>
+        <td>Target</td>
+        <td>חיים</td>
+        <td>יעד</td>
+    </tr>
+    <tr>
+        <td>הישג</td>
+        <td>Achievement</td>
+        <td>חיים</td>
+        <td>שיג</td>
+    </tr>
+    <tr>
+        <td>הנאה</td>
+        <td>Pleasure</td>
+        <td>חיים</td>
+        <td>הנה</td>
+    </tr>
+            <tr>
+        <td>אוטובוס</td>
+        <td>Bus</td>
+        <td>תחבורה</td>
+        <td>אובס</td>
+    </tr>
+    <tr>
+        <td>רכבת</td>
+        <td>Train</td>
+        <td>תחבורה</td>
+        <td>רתק</td>
+    </tr>
+    <tr>
+        <td>מכונית</td>
+        <td>Car</td>
+        <td>תחבורה</td>
+        <td>מכונ</td>
+    </tr>
+    <tr>
+        <td>אופניים</td>
+        <td>Bicycle</td>
+        <td>תחבורה</td>
+        <td>אופנ</td>
+    </tr>
+    <tr>
+        <td>סירה</td>
+        <td>Boat</td>
+        <td>תחבורה</td>
+        <td>סור</td>
+    </tr>
+    <tr>
+        <td>טיסה</td>
+        <td>Flight</td>
+        <td>תחבורה</td>
+        <td>טס</td>
+    </tr>
+    <tr>
+        <td>מונית</td>
+        <td>Taxi</td>
+        <td>תחבורה</td>
+        <td>מונע</td>
+    </tr>
+    <tr>
+        <td>אופנוע</td>
+        <td>Motorcycle</td>
+        <td>תחבורה</td>
+        <td>אופנ</td>
+    </tr>
+    <tr>
+        <td>רכבל</td>
+        <td>Cable Car</td>
+        <td>תחבורה</td>
+        <td>רכב</td>
+    </tr>
+    <tr>
+        <td>תחנה</td>
+        <td>Station</td>
+        <td>תחבורה</td>
+        <td>תחנו</td>
+    </tr>
+    <tr>
+        <td>כביש</td>
+        <td>Road</td>
+        <td>תחבורה</td>
+        <td>כבש</td>
+    </tr>
+    <tr>
+        <td>גשר</td>
+        <td>Bridge</td>
+        <td>תחבורה</td>
+        <td>גוש</td>
+    </tr>
+    <tr>
+        <td>מסלול</td>
+        <td>Track</td>
+        <td>תחבורה</td>
+        <td>מסל</td>
+    </tr>
+    <tr>
+        <td>נמל</td>
+        <td>Port</td>
+        <td>תחבורה</td>
+        <td>נמל</td>
+    </tr>
+    <tr>
+        <td>הגה</td>
+        <td>Steering Wheel</td>
+        <td>תחבורה</td>
+        <td>הגה</td>
+    </tr>
+    <tr>
+        <td>דלק</td>
+        <td>Fuel</td>
+        <td>תחבורה</td>
+        <td>דלק</td>
+    </tr>
+    <tr>
+        <td>חניה</td>
+        <td>Parking</td>
+        <td>תחבורה</td>
+        <td>חנ</td>
+    </tr>
+    <tr>
+        <td>שלט</td>
+        <td>Sign</td>
+        <td>תחבורה</td>
+        <td>שלט</td>
+    </tr>
+    <tr>
+        <td>תמרור</td>
+        <td>Traffic Sign</td>
+        <td>תחבורה</td>
+        <td>תמרור</td>
+    </tr>
+    <tr>
+        <td>מערכת</td>
+        <td>System</td>
+        <td>תחבורה</td>
+        <td>מערך</td>
+    </tr>
+    <tr>
+        <td>כרטיס</td>
+        <td>Ticket</td>
+        <td>תחבורה</td>
+        <td>כרטיס</td>
+    </tr>
+    <tr>
+        <td>הסעה</td>
+        <td>Transport</td>
+        <td>תחבורה</td>
+        <td>הסע</td>
+    </tr>
+    <tr>
+        <td>נסיעה</td>
+        <td>Ride</td>
+        <td>תחבורה</td>
+        <td>נסע</td>
+    </tr>
+    <tr>
+        <td>שירות</td>
+        <td>Service</td>
+        <td>תחבורה</td>
+        <td>שרת</td>
+    </tr>
+    <tr>
+        <td>שיעור</td>
+        <td>Lesson</td>
+        <td>חינוך</td>
+        <td>שיל</td>
+    </tr>
+    <tr>
+        <td>בית ספר</td>
+        <td>School</td>
+        <td>חינוך</td>
+        <td>בית</td>
+    </tr>
+    <tr>
+        <td>תלמיד</td>
+        <td>Student</td>
+        <td>חינוך</td>
+        <td>מלמד</td>
+    </tr>
+    <tr>
+        <td>מבחן</td>
+        <td>Test</td>
+        <td>חינוך</td>
+        <td>בוחן</td>
+    </tr>
+    <tr>
+        <td>ספר לימוד</td>
+        <td>Textbook</td>
+        <td>חינוך</td>
+        <td>ספר</td>
+    </tr>
+    <tr>
+        <td>כיתה</td>
+        <td>Class</td>
+        <td>חינוך</td>
+        <td>כיתת</td>
+    </tr>
+    <tr>
+        <td>מורה</td>
+        <td>Teacher</td>
+        <td>חינוך</td>
+        <td>הורה</td>
+    </tr>
+    <tr>
+        <td>שיעורי בית</td>
+        <td>Homework</td>
+        <td>חינוך</td>
+        <td>שיעור</td>
+    </tr>
+    <tr>
+        <td>תעודה</td>
+        <td>Certificate</td>
+        <td>חינוך</td>
+        <td>תעודה</td>
+    </tr>
+    <tr>
+        <td>מבחן בגרות</td>
+        <td>Matriculation Exam</td>
+        <td>חינוך</td>
+        <td>בגרות</td>
+    </tr>
+    <tr>
+        <td>תואר</td>
+        <td>Degree</td>
+        <td>חינוך</td>
+        <td>תאר</td>
+    </tr>
+    <tr>
+        <td>סטודנט</td>
+        <td>Student</td>
+        <td>חינוך</td>
+        <td>סטודנט</td>
+    </tr>
+    <tr>
+        <td>אוניברסיטה</td>
+        <td>University</td>
+        <td>חינוך</td>
+        <td>אוניברס</td>
+    </tr>
+    <tr>
+        <td>קורס</td>
+        <td>Course</td>
+        <td>חינוך</td>
+        <td>קורס</td>
+    </tr>
+    <tr>
+        <td>חינוך</td>
+        <td>Education</td>
+        <td>חינוך</td>
+        <td>חנך</td>
+    </tr>
+    <tr>
+        <td>עשייה</td>
+        <td>Activity</td>
+        <td>חינוך</td>
+        <td>עשו</td>
+    </tr>
+    <tr>
+        <td>תוכנית לימודים</td>
+        <td>Curriculum</td>
+        <td>חינוך</td>
+        <td>תכנן</td>
+    </tr>
+    <tr>
+        <td>חוג</td>
+        <td>Extracurricular</td>
+        <td>חינוך</td>
+        <td>חוג</td>
+    </tr>
+    <tr>
+        <td>חינוך מיוחד</td>
+        <td>Special Education</td>
+        <td>חינוך</td>
+        <td>מיוחד</td>
+    </tr>
+    <tr>
+        <td>מרצה</td>
+        <td>Lecturer</td>
+        <td>חינוך</td>
+        <td>מרצה</td>
+    </tr>
+    <tr>
+        <td>תלמידה</td>
+        <td>Student (female)</td>
+        <td>חינוך</td>
+        <td>מלמד</td>
+    </tr>
+    <tr>
+        <td>מכינה</td>
+        <td>Preparatory Course</td>
+        <td>חינוך</td>
+        <td>מכין</td>
+    </tr>
+    <tr>
+        <td>תודעה</td>
+        <td>Consciousness</td>
+        <td>פילוסופיה</td>
+        <td>דע</td>
+    </tr>
+    <tr>
+        <td>מוסר</td>
+        <td>Morality</td>
+        <td>פילוסופיה</td>
+        <td>מוסר</td>
+    </tr>
+    <tr>
+        <td>חשיבה</td>
+        <td>Thinking</td>
+        <td>פילוסופיה</td>
+        <td>חשב</td>
+    </tr>
+    <tr>
+        <td>אמת</td>
+        <td>Truth</td>
+        <td>פילוסופיה</td>
+        <td>אמת</td>
+    </tr>
+    <tr>
+        <td>חירות</td>
+        <td>Freedom</td>
+        <td>פילוסופיה</td>
+        <td>חופשי</td>
+    </tr>
+    <tr>
+        <td>קיום</td>
+        <td>Existence</td>
+        <td>פילוסופיה</td>
+        <td>קיים</td>
+    </tr>
+    <tr>
+        <td>שיח</td>
+        <td>Dialogue</td>
+        <td>פילוסופיה</td>
+        <td>שיח</td>
+    </tr>
+    <tr>
+        <td>תכלית</td>
+        <td>Purpose</td>
+        <td>פילוסופיה</td>
+        <td>תכלל</td>
+    </tr>
+    <tr>
+        <td>הוויה</td>
+        <td>Being</td>
+        <td>פילוסופיה</td>
+        <td>היה</td>
+    </tr>
+    <tr>
+        <td>רציונליות</td>
+        <td>Rationality</td>
+        <td>פילוסופיה</td>
+        <td>רציונל</td>
+    </tr>
+    <tr>
+        <td>תופעה</td>
+        <td>Phenomenon</td>
+        <td>פילוסופיה</td>
+        <td>תופס</td>
+    </tr>
+    <tr>
+        <td>אונטולוגיה</td>
+        <td>Ontology</td>
+        <td>פילוסופיה</td>
+        <td>אונטו</td>
+    </tr>
+    <tr>
+        <td>אפיסטמולוגיה</td>
+        <td>Epistemology</td>
+        <td>פילוסופיה</td>
+        <td>אפיסטמ</td>
+    </tr>
+    <tr>
+        <td>פרדוקס</td>
+        <td>Paradox</td>
+        <td>פילוסופיה</td>
+        <td>פרדוקס</td>
+    </tr>
+    <tr>
+        <td>דיכוטומיה</td>
+        <td>Dichotomy</td>
+        <td>פילוסופיה</td>
+        <td>דיכוט</td>
+    </tr>
+    <tr>
+        <td>סובייקטיביות</td>
+        <td>Subjectivity</td>
+        <td>פילוסופיה</td>
+        <td>סובייקט</td>
+    </tr>
+    <tr>
+        <td>אידיאולוגיה</td>
+        <td>Ideology</td>
+        <td>פילוסופיה</td>
+        <td>אידיאולוג</td>
+    </tr>
+    <tr>
+        <td>תיאוריה</td>
+        <td>Theory</td>
+        <td>פילוסופיה</td>
+        <td>תיאור</td>
+    </tr>
+    <tr>
+        <td>אסתטיקה</td>
+        <td>Aesthetics</td>
+        <td>פילוסופיה</td>
+        <td>אסתט</td>
+    </tr>
+    <tr>
+        <td>סימבוליזם</td>
+        <td>Symbolism</td>
+        <td>פילוסופיה</td>
+        <td>סימבול</td>
+    </tr>
+    <tr>
+        <td>רציונליזם</td>
+        <td>Rationalism</td>
+        <td>פילוסופיה</td>
+        <td>רציונל</td>
+    </tr>
+    <tr>
+        <td>ללמוד</td>
+        <td>To learn</td>
+        <td>פעל</td>
+        <td>למד</td>
+    </tr>
+    <tr>
+        <td>ללכת</td>
+        <td>To go</td>
+        <td>פעל</td>
+        <td>הלך</td>
+    </tr>
+    <tr>
+        <td>לשחק</td>
+        <td>To play</td>
+        <td>פעל</td>
+        <td>שחק</td>
+    </tr>
+    <tr>
+        <td>לקרוא</td>
+        <td>To read</td>
+        <td>פעל</td>
+        <td>קרא</td>
+    </tr>
+    <tr>
+        <td>לכתוב</td>
+        <td>To write</td>
+        <td>פעל</td>
+        <td>כתב</td>
+    </tr>
+    <tr>
+        <td>לשיר</td>
+        <td>To sing</td>
+        <td>פעל</td>
+        <td>שר</td>
+    </tr>
+    <tr>
+        <td>לדבר</td>
+        <td>To speak</td>
+        <td>פעל</td>
+        <td>דיבר</td>
+    </tr>
+    <tr>
+        <td>לראות</td>
+        <td>To see</td>
+        <td>פעל</td>
+        <td>ראה</td>
+    </tr>
+    <tr>
+        <td>להרגיש</td>
+        <td>To feel</td>
+        <td>פעל</td>
+        <td>רגש</td>
+    </tr>
+    <tr>
+        <td>לחשוב</td>
+        <td>To think</td>
+        <td>פעל</td>
+        <td>חשב</td>
+    </tr>
+    <tr>
+        <td>לחייך</td>
+        <td>To smile</td>
+        <td>פעל</td>
+        <td>חייך</td>
+    </tr>
+    <tr>
+        <td>לעבוד</td>
+        <td>To work</td>
+        <td>פעל</td>
+        <td>עבד</td>
+    </tr>
+    <tr>
+        <td>לצחוק</td>
+        <td>To laugh</td>
+        <td>פעל</td>
+        <td>צחק</td>
+    </tr>
+    <tr>
+        <td>ללמוד</td>
+        <td>To study</td>
+        <td>פעל</td>
+        <td>למד</td>
+    </tr>
+    <tr>
+        <td>לסיים</td>
+        <td>To finish</td>
+        <td>פעל</td>
+        <td>סיים</td>
+    </tr>
+    <tr>
+        <td>לשפר</td>
+        <td>To improve</td>
+        <td>פעל</td>
+        <td>שיפר</td>
+    </tr>
+    <tr>
+        <td>לבקש</td>
+        <td>To ask</td>
+        <td>פעל</td>
+        <td>בקש</td>
+    </tr>
+    <tr>
+        <td>להצליח</td>
+        <td>To succeed</td>
+        <td>פעל</td>
+        <td>הצליח</td>
+    </tr>
+    <tr>
+        <td>לזכור</td>
+        <td>To remember</td>
+        <td>פעל</td>
+        <td>זכר</td>
+    </tr>
+    <tr>
+        <td>לסלוח</td>
+        <td>To forgive</td>
+        <td>פעל</td>
+        <td>סלח</td>
+    </tr>
+    <tr>
+        <td>לעזור</td>
+        <td>To help</td>
+        <td>פעל</td>
+        <td>עזר</td>
+    </tr>
+            <tr>
+        <td>ללמוד</td>
+        <td>To learn</td>
+        <td>פעל</td>
+        <td>למד</td>
+    </tr>
+    <tr>
+        <td>לומד</td>
+        <td>Learning</td>
+        <td>פעל</td>
+        <td>למד</td>
+    </tr>
+    <tr>
+        <td>למד</td>
+        <td>Learned</td>
+        <td>פעל</td>
+        <td>למד</td>
+    </tr>
+    <tr>
+        <td>ילמד</td>
+        <td>Will learn</td>
+        <td>פעל</td>
+        <td>למד</td>
+    </tr>
+    <tr>
+        <td>למד!</td>
+        <td>Learn!</td>
+        <td>פעל</td>
+        <td>למד</td>
+    </tr>
+    <tr>
+        <td>ללכת</td>
+        <td>To go</td>
+        <td>פעל</td>
+        <td>הלך</td>
+    </tr>
+    <tr>
+        <td>הולך</td>
+        <td>Going</td>
+        <td>פעל</td>
+        <td>הלך</td>
+    </tr>
+    <tr>
+        <td>הלך</td>
+        <td>Went</td>
+        <td>פעל</td>
+        <td>הלך</td>
+    </tr>
+    <tr>
+        <td>ילך</td>
+        <td>Will go</td>
+        <td>פעל</td>
+        <td>הלך</td>
+    </tr>
+    <tr>
+        <td>לך!</td>
+        <td>Go!</td>
+        <td>פעל</td>
+        <td>הלך</td>
+    </tr>
+    <tr>
+        <td>לשחק</td>
+        <td>To play</td>
+        <td>פעל</td>
+        <td>שחק</td>
+    </tr>
+    <tr>
+        <td>משחק</td>
+        <td>Playing</td>
+        <td>פעל</td>
+        <td>שחק</td>
+    </tr>
+    <tr>
+        <td>שיחק</td>
+        <td>Played</td>
+        <td>פעל</td>
+        <td>שחק</td>
+    </tr>
+    <tr>
+        <td>ישחק</td>
+        <td>Will play</td>
+        <td>פעל</td>
+        <td>שחק</td>
+    </tr>
+    <tr>
+        <td>שחק!</td>
+        <td>Play!</td>
+        <td>פעל</td>
+        <td>שחק</td>
+    </tr>
+    <tr>
+        <td>לקרוא</td>
+        <td>To read</td>
+        <td>פעל</td>
+        <td>קרא</td>
+    </tr>
+    <tr>
+        <td>קורא</td>
+        <td>Reading</td>
+        <td>פעל</td>
+        <td>קרא</td>
+    </tr>
+    <tr>
+        <td>קרא</td>
+        <td>Read</td>
+        <td>פעל</td>
+        <td>קרא</td>
+    </tr>
+    <tr>
+        <td>יקרא</td>
+        <td>Will read</td>
+        <td>פעל</td>
+        <td>קרא</td>
+    </tr>
+    <tr>
+        <td>קרא!</td>
+        <td>Read!</td>
+        <td>פעל</td>
+        <td>קרא</td>
+    </tr>
+    <tr>
+        <td>לכתוב</td>
+        <td>To write</td>
+        <td>פעל</td>
+        <td>כתב</td>
+    </tr>
+    <tr>
+        <td>כותב</td>
+        <td>Writing</td>
+        <td>פעל</td>
+        <td>כתב</td>
+    </tr>
+    <tr>
+        <td>כתב</td>
+        <td>Wrote</td>
+        <td>פעל</td>
+        <td>כתב</td>
+    </tr>
+    <tr>
+        <td>יכתוב</td>
+        <td>Will write</td>
+        <td>פעל</td>
+        <td>כתב</td>
+    </tr>
+    <tr>
+        <td>כתוב!</td>
+        <td>Write!</td>
+        <td>פעל</td>
+        <td>כתב</td>
+    </tr>
+    <tr>
+        <td>לשיר</td>
+        <td>To sing</td>
+        <td>פעל</td>
+        <td>שר</td>
+    </tr>
+    <tr>
+        <td>שר</td>
+        <td>Singing</td>
+        <td>פעל</td>
+        <td>שר</td>
+    </tr>
+    <tr>
+        <td>שר</td>
+        <td>Sang</td>
+        <td>פעל</td>
+        <td>שר</td>
+    </tr>
+    <tr>
+        <td>ישיר</td>
+        <td>Will sing</td>
+        <td>פעל</td>
+        <td>שר</td>
+    </tr>
+    <tr>
+        <td>שיר!</td>
+        <td>Sing!</td>
+        <td>פעל</td>
+        <td>שר</td>
+    </tr>
+    <tr>
+        <td>לדבר</td>
+        <td>To speak</td>
+        <td>פעל</td>
+        <td>דבר</td>
+    </tr>
+    <tr>
+        <td>מדבר</td>
+        <td>Speaking</td>
+        <td>פעל</td>
+        <td>דבר</td>
+    </tr>
+    <tr>
+        <td>דיבר</td>
+        <td>Spoke</td>
+        <td>פעל</td>
+        <td>דבר</td>
+    </tr>
+    <tr>
+        <td>ידבר</td>
+        <td>Will speak</td>
+        <td>פעל</td>
+        <td>דבר</td>
+    </tr>
+    <tr>
+        <td>דבר!</td>
+        <td>Speak!</td>
+        <td>פעל</td>
+        <td>דבר</td>
+    </tr>
+    <tr>
+        <td>לראות</td>
+        <td>To see</td>
+        <td>פעל</td>
+        <td>ראה</td>
+    </tr>
+    <tr>
+        <td>רואה</td>
+        <td>Seeing</td>
+        <td>פעל</td>
+        <td>ראה</td>
+    </tr>
+    <tr>
+        <td>ראה</td>
+        <td>Saw</td>
+        <td>פעל</td>
+        <td>ראה</td>
+    </tr>
+    <tr>
+        <td>יראה</td>
+        <td>Will see</td>
+        <td>פעל</td>
+        <td>ראה</td>
+    </tr>
+    <tr>
+        <td>ראה!</td>
+        <td>See!</td>
+        <td>פעל</td>
+        <td>ראה</td>
+    </tr>
+    <tr>
+        <td>להרגיש</td>
+        <td>To feel</td>
+        <td>פעל</td>
+        <td>רגש</td>
+    </tr>
+    <tr>
+        <td>מרגיש</td>
+        <td>Feeling</td>
+        <td>פעל</td>
+        <td>רגש</td>
+    </tr>
+    <tr>
+        <td>הרגיש</td>
+        <td>Felt</td>
+        <td>פעל</td>
+        <td>רגש</td>
+    </tr>
+    <tr>
+        <td>ירגיש</td>
+        <td>Will feel</td>
+        <td>פעל</td>
+        <td>רגש</td>
+    </tr>
+    <tr>
+        <td>הרגש!</td>
+        <td>Feel!</td>
+        <td>פעל</td>
+        <td>רגש</td>
+    </tr>
+    <tr>
+        <td>לחשוב</td>
+        <td>To think</td>
+        <td>פעל</td>
+        <td>חשב</td>
+    </tr>
+    <tr>
+        <td>חושב</td>
+        <td>Thinking</td>
+        <td>פעל</td>
+        <td>חשב</td>
+    </tr>
+    <tr>
+        <td>חשב</td>
+        <td>Thought</td>
+        <td>פעל</td>
+        <td>חשב</td>
+    </tr>
+    <tr>
+        <td>יחשוב</td>
+        <td>Will think</td>
+        <td>פעל</td>
+        <td>חשב</td>
+    </tr>
+    <tr>
+        <td>חשוב!</td>
+        <td>Think!</td>
+        <td>פעל</td>
+        <td>חשב</td>
+    </tr>
+    <tr>
+        <td>לחייך</td>
+        <td>To smile</td>
+        <td>פעל</td>
+        <td>חייך</td>
+    </tr>
+    <tr>
+        <td>מחייך</td>
+        <td>Smiling</td>
+        <td>פעל</td>
+        <td>חייך</td>
+    </tr>
+    <tr>
+        <td>חייך</td>
+        <td>Smiled</td>
+        <td>פעל</td>
+        <td>חייך</td>
+    </tr>
+    <tr>
+        <td>יחייך</td>
+        <td>Will smile</td>
+        <td>פעל</td>
+        <td>חייך</td>
+    </tr>
+    <tr>
+        <td>חייך!</td>
+        <td>Smile!</td>
+        <td>פעל</td>
+        <td>חייך</td>
+    </tr>
+    <tr>
+        <td>לעבוד</td>
+        <td>To work</td>
+        <td>פעל</td>
+        <td>עבד</td>
+    </tr>
+    <tr>
+        <td>עובד</td>
+        <td>Working</td>
+        <td>פעל</td>
+        <td>עבד</td>
+    </tr>
+    <tr>
+        <td>עבד</td>
+        <td>Worked</td>
+        <td>פעל</td>
+        <td>עבד</td>
+    </tr>
+    <tr>
+        <td>יעבוד</td>
+        <td>Will work</td>
+        <td>פעל</td>
+        <td>עבד</td>
+    </tr>
+    <tr>
+        <td>עבוד!</td>
+        <td>Work!</td>
+        <td>פעל</td>
+        <td>עבד</td>
+    </tr>
+    <tr>
+        <td>לצחוק</td>
+        <td>To laugh</td>
+        <td>פעל</td>
+        <td>צחק</td>
+    </tr>
+    <tr>
+        <td>צוחק</td>
+        <td>Laughing</td>
+        <td>פעל</td>
+        <td>צחק</td>
+    </tr>
+    <tr>
+        <td>צחק</td>
+        <td>Laughed</td>
+        <td>פעל</td>
+        <td>צחק</td>
+    </tr>
+    <tr>
+        <td>יצחק</td>
+        <td>Will laugh</td>
+        <td>פעל</td>
+        <td>צחק</td>
+    </tr>
+    <tr>
+        <td>צחק!</td>
+        <td>Laugh!</td>
+        <td>פעל</td>
+        <td>צחק</td>
+    </tr>
+    <tr>
+        <td>לסיים</td>
+        <td>To finish</td>
+        <td>פעל</td>
+        <td>סיים</td>
+    </tr>
+    <tr>
+        <td>מסיים</td>
+        <td>Finishing</td>
+        <td>פעל</td>
+        <td>סיים</td>
+    </tr>
+    <tr>
+        <td>סיים</td>
+        <td>Finished</td>
+        <td>פעל</td>
+        <td>סיים</td>
+    </tr>
+    <tr>
+        <td>יסיים</td>
+        <td>Will finish</td>
+        <td>פעל</td>
+        <td>סיים</td>
+    </tr>
+    <tr>
+        <td>סיים!</td>
+        <td>Finish!</td>
+        <td>פעל</td>
+        <td>סיים</td>
+    </tr>
+    <tr>
+        <td>לשפר</td>
+        <td>To improve</td>
+        <td>פעל</td>
+        <td>שיפר</td>
+    </tr>
+    <tr>
+        <td>משפר</td>
+        <td>Improving</td>
+        <td>פעל</td>
+        <td>שיפר</td>
+    </tr>
+    <tr>
+        <td>שיפר</td>
+        <td>Improved</td>
+        <td>פעל</td>
+        <td>שיפר</td>
+    </tr>
+    <tr>
+        <td>ישפר</td>
+        <td>Will improve</td>
+        <td>פעל</td>
+        <td>שיפר</td>
+    </tr>
+        <!-- הוספת שורות נוספות עד 1000 מילים -->
+        <!-- ... -->
+    </tbody>
+</table>
+
+<script>
+    function filterTable() {
+        const input = document.getElementById('searchInput');
+        const filter = input.value.toLowerCase();
+        const table = document.getElementById('dictionaryTable');
+        const tr = table.getElementsByTagName('tr');
+
+        for (let i = 1; i < tr.length; i++) {
+            const tdHebrew = tr[i].getElementsByTagName('td')[0];
+            const tdEnglish = tr[i].getElementsByTagName('td')[1];
+            if (tdHebrew || tdEnglish) {
+                const textHebrew = tdHebrew.textContent || tdHebrew.innerText;
+                const textEnglish = tdEnglish.textContent || tdEnglish.innerText;
+                if (textHebrew.toLowerCase().indexOf(filter) > -1 || textEnglish.toLowerCase().indexOf(filter) > -1) {
+                    tr[i].style.display = '';
+                } else {
+                    tr[i].style.display = 'none';
+                }
+            }       
+        }
+    }
+
+    function sortTable() {
+        const table = document.getElementById('dictionaryTable');
+        const tbody = table.tBodies[0];
+        const rows = Array.from(tbody.rows);
+        const sortOption = document.getElementById('sortSelect').value;
+
+        rows.sort((a, b) => {
+            let aText, bText;
+            if (sortOption === 'category') {
+                aText = a.cells[2].textContent;
+                bText = b.cells[2].textContent;
+            } else if (sortOption === 'abc') {
+                aText = a.cells[1].textContent; // מיון לפי מילה באנגלית
+                bText = b.cells[1].textContent;
+            } else if (sortOption === 'root') {
+                aText = a.cells[3].textContent; // מיון לפי שורש
+                bText = b.cells[3].textContent;
+            } else {
+                aText = a.cells[0].textContent; // מיון לפי מילה בעברית
+                bText = b.cells[0].textContent;
+            }
+            return aText.localeCompare(bText);
+        });
+
+        rows.forEach(row => tbody.appendChild(row));
+    }
+</script>
+
+</body>
+</html>
